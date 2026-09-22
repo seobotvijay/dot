@@ -8,6 +8,7 @@ const links = [
   { href: "#offerings", label: "What We Offer" },
   { href: "#benefits", label: "Benefits" },
   { href: "#impact", label: "Impact" },
+  { href: "#testimonials", label: "Testimonials" },
 ];
 
 export default function Nav() {
