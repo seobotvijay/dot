@@ -27,6 +27,18 @@
   --color-brand-leaf: #4caf7d;
   --color-brand-leaf-dark: #368a5f;
   --color-brand-leaf-light: #ddf2e6;
+
+  --color-brand-rose: #e8628f;
+  --color-brand-rose-dark: #c94571;
+  --color-brand-rose-light: #fce4ec;
+
+  --color-brand-sky: #4a9fe0;
+  --color-brand-sky-dark: #2f7fbe;
+  --color-brand-sky-light: #dceefb;
+
+  --color-brand-steel: #6b7a99;
+  --color-brand-steel-dark: #4f5c77;
+  --color-brand-steel-light: #e4e7ee;
 }
 
 @theme inline {
@@ -56,6 +68,18 @@
   --color-leaf: var(--color-brand-leaf);
   --color-leaf-dark: var(--color-brand-leaf-dark);
   --color-leaf-light: var(--color-brand-leaf-light);
+
+  --color-rose: var(--color-brand-rose);
+  --color-rose-dark: var(--color-brand-rose-dark);
+  --color-rose-light: var(--color-brand-rose-light);
+
+  --color-sky: var(--color-brand-sky);
+  --color-sky-dark: var(--color-brand-sky-dark);
+  --color-sky-light: var(--color-brand-sky-light);
+
+  --color-steel: var(--color-brand-steel);
+  --color-steel-dark: var(--color-brand-steel-dark);
+  --color-steel-light: var(--color-brand-steel-light);
 
   --font-sans: var(--font-baloo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-baloo), ui-sans-serif, system-ui, sans-serif;

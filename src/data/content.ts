@@ -1,45 +1,113 @@
-export type Pillar = {
+export type BrandColor =
+  | "coral"
+  | "teal"
+  | "sun"
+  | "lavender"
+  | "leaf"
+  | "rose"
+  | "sky"
+  | "steel";
+
+export type LearningArea = {
   name: string;
-  short: string;
   description: string;
-  color: "coral" | "teal" | "sun" | "lavender" | "leaf";
+  color: BrandColor;
 };
 
-export const pillars: Pillar[] = [
+export const learningAreas: LearningArea[] = [
   {
-    name: "Cognitive & Early Literacy",
-    short: "Think",
+    name: "Language and Communication",
     description:
-      "Number sense, pattern-finding, problem-solving and early reading built through hands-on discovery, not worksheets.",
+      "Vocabulary, listening and confident self-expression built through conversation, storytelling and dramatic play.",
     color: "coral",
   },
   {
-    name: "Language & Communication",
-    short: "Speak",
+    name: "Literacy and Phonics",
     description:
-      "Vocabulary, storytelling and confident expression, nurtured through songs, conversation and dramatic play.",
+      "Sound awareness, letter recognition and early reading and writing skills, built step by step.",
     color: "teal",
   },
   {
-    name: "Motor & Physical Development",
-    short: "Move",
+    name: "Numeracy and Maths",
     description:
-      "Fine and gross motor skills strengthened through movement, art, music and outdoor play every single day.",
+      "Number sense, counting, patterns and early problem-solving through hands-on, playful exploration.",
     color: "sun",
   },
   {
-    name: "Social-Emotional Growth",
-    short: "Feel",
+    name: "Me and My World",
     description:
-      "Empathy, self-regulation and friendship skills practiced in circle time, group play and guided reflection.",
+      "Awareness of self, family, community and environment — helping children make sense of the world around them.",
     color: "lavender",
   },
   {
-    name: "Creativity & Imagination",
-    short: "Create",
+    name: "Social and Emotional Learning",
     description:
-      "Open-ended art, pretend play and inquiry projects that let every child's imagination lead the way.",
+      "Empathy, self-regulation, sharing and friendship skills practiced through circle time and guided play.",
     color: "leaf",
+  },
+  {
+    name: "Art and Creative Expression",
+    description:
+      "Open-ended art, music, and imaginative play that let every child's creativity lead the way.",
+    color: "rose",
+  },
+  {
+    name: "Movement and Coordination",
+    description:
+      "Fine and gross motor skills strengthened daily through movement, games and structured physical play.",
+    color: "sky",
+  },
+  {
+    name: "Health and Safety",
+    description:
+      "Everyday habits and awareness around hygiene, nutrition and personal safety, built into routines.",
+    color: "steel",
+  },
+];
+
+export const nepAlignment = {
+  badge: "Aligned to NEP 2020 & NCF",
+  headline: "Built on India's own early-years framework",
+  description:
+    "The DOT curriculum is designed in line with the National Education Policy (NEP) 2020 and the National Curriculum Framework for Foundational Stage (NCF), so schools get play-based, whole-child learning that also maps cleanly to national early-years guidelines.",
+};
+
+export type ProgramLevel = {
+  grade: string;
+  dotName: string;
+  ageRange: string;
+  description: string;
+  color: BrandColor;
+};
+
+export const programLevels: ProgramLevel[] = [
+  {
+    grade: "LKG",
+    dotName: "Little Dot",
+    ageRange: "Ages 3–4",
+    description: "First steps into structured play-based learning — building comfort, curiosity and classroom routines.",
+    color: "coral",
+  },
+  {
+    grade: "UKG",
+    dotName: "Big Dot",
+    ageRange: "Ages 4–5",
+    description: "Deeper exploration across all 8 areas of learning, building the foundation for formal literacy and numeracy.",
+    color: "teal",
+  },
+  {
+    grade: "Std 1",
+    dotName: "Tiny Dot",
+    ageRange: "Ages 5–6",
+    description: "A gentle bridge into primary school — strengthening reading, writing and number skills through continued play.",
+    color: "sun",
+  },
+  {
+    grade: "Std 2",
+    dotName: "Mighty Dot",
+    ageRange: "Ages 6–7",
+    description: "Building independence and confidence as children apply foundational skills to more complex, guided tasks.",
+    color: "lavender",
   },
 ];
 
@@ -62,7 +130,7 @@ export const howItWorks: Step[] = [
   {
     title: "Deliver the Curriculum",
     description:
-      "Daily, theme-based lesson plans guide play-based learning across all five developmental dots — right inside your classroom.",
+      "Daily, theme-based lesson plans guide play-based learning across all 8 areas of learning — right inside your classroom.",
   },
   {
     title: "Engage Parents at Home",
@@ -97,9 +165,9 @@ export const whyEarlyYears: WhyPoint[] = [
       "Children with active parent involvement show significantly stronger language and social outcomes by kindergarten.",
   },
   {
-    stat: "5",
+    stat: "8",
     description:
-      "DOT develops all five domains of early childhood — cognitive, language, motor, social-emotional and creative — together, not in isolation.",
+      "DOT develops all 8 areas of early learning — language, literacy, numeracy and more — together, not in isolation.",
   },
 ];
 
@@ -116,12 +184,12 @@ export const offerings: Offering[] = [
     title: "Curriculum",
     tagline: "A whole-child, play-based framework",
     description:
-      "Theme-based, age-appropriate lesson plans spanning all five DOT pillars, sequenced week by week so teachers always know what's next.",
+      "Theme-based, age-appropriate lesson plans spanning all 8 areas of learning, sequenced week by week so teachers always know what's next.",
     points: [
-      "Age bands from playgroup through pre-primary (ages 2–6)",
+      "4 program levels: Little Dot, Big Dot, Tiny Dot & Mighty Dot",
       "Weekly themes with daily activity plans, songs and stories",
       "Built for play-based, inquiry-led classrooms",
-      "Aligned to global early-years learning outcomes",
+      "Aligned to NEP 2020 and the NCF for Foundational Stage",
     ],
     color: "coral",
   },
@@ -155,13 +223,128 @@ export const offerings: Offering[] = [
     title: "Teacher & Parent App",
     tagline: "Digital-first — no materials to manage",
     description:
-      "Everything teachers and parents need lives in the DOT app: lesson plans, activity guides and progress tracking, with nothing to print, ship or store.",
+      "Everything teachers and parents need lives in the DOT app: lesson plans, activity guides and a built-in progress tracker, with nothing to print, ship or store.",
     points: [
       "Daily lesson plans and activity guides for teachers",
-      "Attendance and milestone tracking, digitized",
+      "Built-in progress tracking across all 8 areas of learning",
       "Parent app with real-time updates and messaging",
       "No physical kits or materials — fully digital delivery",
     ],
+    color: "lavender",
+  },
+];
+
+export const progressTracking = {
+  headline: "Every child, tracked across every area of learning",
+  description:
+    "The DOT program comes with a built-in progress tracking system that regularly tracks each child's learning and progress in developmental skills and across all 8 areas of learning. The goal is to catch gaps early, not after they've become setbacks.",
+  steps: [
+    {
+      title: "Track",
+      description: "Teachers log observations and milestones against developmental skills and all 8 areas of learning, on a regular cadence.",
+    },
+    {
+      title: "Assess Gaps",
+      description: "The tracker surfaces exactly where a child is progressing well and where they may be falling behind.",
+    },
+    {
+      title: "Teachers Intervene",
+      description: "Teachers get clear, actionable signals so they can step in early with the right support for that child.",
+    },
+    {
+      title: "No Child Falls Behind",
+      description: "Parents and school leaders see the same picture, so progress — and gaps — are visible to everyone, together.",
+    },
+  ],
+};
+
+export type BenefitGroup = {
+  audience: string;
+  color: BrandColor;
+  benefits: string[];
+};
+
+export const benefits: BenefitGroup[] = [
+  {
+    audience: "For Schools",
+    color: "coral",
+    benefits: [
+      "A ready-made, NEP 2020 & NCF-aligned curriculum — no in-house curriculum design needed",
+      "Certified, trained teachers with ongoing mentorship, reducing dependence on any one hire",
+      "A stronger enrollment pitch with a structured, outcomes-driven early-years program",
+      "Built-in progress tracking gives leadership visibility into classroom outcomes",
+      "Fully digital delivery — no materials to purchase, store or run out of",
+    ],
+  },
+  {
+    audience: "For Teachers",
+    color: "teal",
+    benefits: [
+      "Ready-to-use daily lesson plans across all 8 areas of learning — less prep time",
+      "Structured certification plus ongoing mentorship from early-years specialists",
+      "A simple app to plan, track and report — no paperwork-heavy processes",
+      "Clear visibility into each child's progress, making interventions easier to plan",
+      "A genuine growth path within a structured, well-supported program",
+    ],
+  },
+  {
+    audience: "For Parents",
+    color: "sun",
+    benefits: [
+      "Real-time visibility into what their child is learning, day to day",
+      "Simple, guided activities to extend learning at home — no guesswork",
+      "Regular, easy-to-understand updates on their child's developmental progress",
+      "A direct line to teachers through the DOT app",
+      "Confidence that gaps are caught early, not discovered too late",
+    ],
+  },
+  {
+    audience: "For Children",
+    color: "lavender",
+    benefits: [
+      "Joyful, play-based learning instead of rote instruction",
+      "Whole-child development across language, numeracy, social-emotional skills and more",
+      "Consistent, extra support the moment they need it — never left to fall behind",
+      "A gentle, confident bridge from pre-primary into primary school",
+      "A classroom environment built around how young children actually learn",
+    ],
+  },
+];
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  color: BrandColor;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "DOT gave us a structured, NEP-aligned early-years program without having to build a curriculum team of our own. Parent enquiries about our pre-primary section have gone up noticeably since we partnered.",
+    name: "Principal",
+    role: "DOT Partner School",
+    color: "coral",
+  },
+  {
+    quote:
+      "The daily lesson plans save me hours every week, and the progress tracker makes it so easy to spot which child needs extra support — I don't have to guess anymore.",
+    name: "Pre-Primary Teacher",
+    role: "DOT Certified Educator",
+    color: "teal",
+  },
+  {
+    quote:
+      "I finally know what my daughter is learning each day, not just at the term-end report. The home activities are simple enough that we actually do them together.",
+    name: "Parent",
+    role: "Big Dot (UKG) Family",
+    color: "sun",
+  },
+  {
+    quote:
+      "My son used to dread structured activities. With DOT's play-based approach he asks to do his 'DOT time' at home now — that shift alone was worth it for us.",
+    name: "Parent",
+    role: "Little Dot (LKG) Family",
     color: "lavender",
   },
 ];

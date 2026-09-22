@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DOT Learning Circle | Play-Based Early Years Program for Pre-Primary Schools</title>
-<meta name="description" content="DOT is a play-based early years program for pre-primary schools — a whole-child curriculum, teacher training, a parent engagement program, and a teacher & parent app." />
+<meta name="description" content="DOT is a play-based early years program for pre-primary schools, aligned to NEP 2020 & NCF — a whole-child curriculum, teacher training, a parent engagement program, and a teacher & parent app." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -34,6 +34,18 @@
     --leaf-dark: #368a5f;
     --leaf-light: #ddf2e6;
 
+    --rose: #e8628f;
+    --rose-dark: #c94571;
+    --rose-light: #fce4ec;
+
+    --sky: #4a9fe0;
+    --sky-dark: #2f7fbe;
+    --sky-light: #dceefb;
+
+    --steel: #6b7a99;
+    --steel-dark: #4f5c77;
+    --steel-light: #e4e7ee;
+
     --font-display: "Baloo 2", ui-sans-serif, system-ui, sans-serif;
     --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   }
@@ -47,7 +59,7 @@
     font-family: var(--font-body);
     line-height: 1.5;
   }
-  h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+  h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; }
   p { margin: 0; }
   ul, ol { margin: 0; padding: 0; list-style: none; }
   a { color: inherit; text-decoration: none; }
@@ -78,8 +90,8 @@
   }
   .brand-dot span { width: 10px; height: 10px; border-radius: 999px; background: var(--cream); }
   .brand .accent { color: var(--coral); }
-  nav.links { display: none; gap: 32px; align-items: center; }
-  nav.links a { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); transition: color 0.15s; }
+  nav.links { display: none; gap: 28px; align-items: center; }
+  nav.links a { font-size: 0.88rem; font-weight: 500; color: var(--ink-soft); transition: color 0.15s; white-space: nowrap; }
   nav.links a:hover { color: var(--coral); }
   .btn-primary {
     display: inline-block; border-radius: 999px; background: var(--coral); color: var(--cream);
@@ -95,14 +107,14 @@
   .nav-cta { display: none; }
   .nav-toggle {
     display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(31,42,68,0.1); background: none;
+    width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(31,42,68,0.1); background: none; flex-shrink: 0;
   }
   .nav-toggle span { width: 18px; height: 2px; background: var(--ink); }
   .mobile-menu { display: none; border-top: 1px solid rgba(31,42,68,0.06); padding: 16px 24px; }
   .mobile-menu.open { display: flex; flex-direction: column; gap: 16px; }
   .mobile-menu a { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); }
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     nav.links { display: flex; }
     .nav-cta { display: inline-block; }
     .nav-toggle { display: none; }
@@ -121,6 +133,7 @@
     background: var(--teal-light); color: var(--teal-dark); padding: 6px 16px; font-size: 0.85rem; font-weight: 600;
   }
   .badge.coral { background: var(--coral-light); color: var(--coral-dark); }
+  .badge.leaf { background: var(--leaf-light); color: var(--leaf-dark); }
   h1.headline { margin-top: 24px; font-size: 2.25rem; font-weight: 700; line-height: 1.15; color: var(--ink); }
   h1.headline .accent { color: var(--coral); white-space: nowrap; }
   .lede { margin-top: 24px; max-width: 480px; font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft); }
@@ -160,21 +173,40 @@
   .section-sub { margin-top: 32px; font-size: 1.1rem; line-height: 1.7; color: var(--ink-soft); }
   @media (min-width: 640px) { .section-title { font-size: 2.25rem; } }
 
-  /* ---------- What is DOT ---------- */
-  .pillars-grid { margin-top: 64px; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-  .pillar-card {
+  /* ---------- What is DOT / 8 Areas ---------- */
+  .areas-subhead { margin-top: 20px; font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft); }
+  .areas-label { margin: 64px 0 0; text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--ink); }
+  .areas-grid { margin-top: 40px; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .area-card {
     position: relative; border-radius: 16px; border: 1px solid rgba(31,42,68,0.05); background: var(--cream);
-    padding: 24px; transition: transform 0.15s, box-shadow 0.15s;
+    padding: 22px; transition: transform 0.15s, box-shadow 0.15s;
   }
-  .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -16px rgba(31,42,68,0.2); }
-  .pillar-num {
-    display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 999px;
-    font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+  .area-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -16px rgba(31,42,68,0.2); }
+  .area-num {
+    display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
   }
-  .pillar-card h3 { margin-top: 16px; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
-  .pillar-card .pillar-name { margin-top: 4px; font-size: 0.85rem; font-weight: 600; color: var(--ink-soft); }
-  .pillar-card p.desc { margin-top: 12px; font-size: 0.875rem; line-height: 1.6; color: var(--ink-soft); }
-  .pillar-marker { position: absolute; top: -8px; right: -8px; width: 16px; height: 16px; border-radius: 999px; }
+  .area-card h4 { margin-top: 14px; font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+  .area-card p.desc { margin-top: 10px; font-size: 0.82rem; line-height: 1.55; color: var(--ink-soft); }
+  .area-marker { position: absolute; top: -7px; right: -7px; width: 14px; height: 14px; border-radius: 999px; }
+
+  /* ---------- Program levels ---------- */
+  .levels-wrap { position: relative; margin-top: 64px; }
+  .levels-line { position: absolute; left: 0; right: 0; top: 44px; height: 2px; background: rgba(31,42,68,0.1); display: none; }
+  .levels-grid { display: grid; gap: 40px; }
+  @media (min-width: 900px) { .levels-grid { grid-template-columns: repeat(4, 1fr); } .levels-line { display: block; } }
+  .level-item { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .level-circle {
+    z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 88px; height: 88px; border-radius: 999px; box-shadow: 0 0 0 8px var(--cream);
+  }
+  .level-circle .name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; line-height: 1; }
+  .level-circle .tag { margin-top: 4px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .level-grade { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 12px; font-size: 0.72rem; font-weight: 700; }
+  .level-grade .dot { width: 6px; height: 6px; border-radius: 999px; }
+  .level-item h3 { margin-top: 12px; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+  .level-item .age { margin-top: 2px; font-size: 0.72rem; font-weight: 600; color: var(--ink-soft); }
+  .level-item p.desc { margin-top: 12px; max-width: 220px; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
 
   /* ---------- How & Why ---------- */
   .how-why { background: color-mix(in srgb, var(--teal-light) 40%, transparent); }
@@ -205,6 +237,29 @@
   .offer-points li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; color: var(--ink); }
   .offer-points svg { flex-shrink: 0; margin-top: 2px; width: 20px; height: 20px; }
 
+  /* ---------- Progress tracking ---------- */
+  .tracking { background: color-mix(in srgb, var(--teal-light) 40%, transparent); }
+  .tracking-grid { display: grid; gap: 64px; align-items: center; }
+  @media (min-width: 1024px) { .tracking-grid { grid-template-columns: 1fr 1fr; } }
+  .tracking-badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; background: #fff; color: var(--teal-dark); padding: 6px 16px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 1px 0 rgba(31,42,68,0.05); }
+  .tracking-copy h2 { margin-top: 24px; font-size: 1.875rem; font-weight: 700; color: var(--ink); }
+  .tracking-copy p { margin-top: 24px; font-size: 1.1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tracking-steps { display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
+  .tracking-step { border-radius: 16px; background: #fff; padding: 24px; box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); }
+  .tracking-step .tstep-num { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: var(--teal); color: var(--cream); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
+  .tracking-step h4 { margin-top: 16px; font-size: 1rem; font-weight: 700; color: var(--ink); }
+  .tracking-step p { margin-top: 8px; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
+
+  /* ---------- Benefits ---------- */
+  .benefits-grid { margin-top: 64px; display: grid; gap: 24px; }
+  @media (min-width: 700px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
+  .benefit-card { border-radius: 24px; border: 1px solid rgba(31,42,68,0.08); background: var(--cream); padding: 24px; }
+  .benefit-tag { display: inline-flex; border-radius: 999px; padding: 4px 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+  .benefit-list { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .benefit-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; line-height: 1.55; color: var(--ink); }
+  .benefit-list svg { flex-shrink: 0; margin-top: 2px; width: 16px; height: 16px; }
+
   /* ---------- Impact ---------- */
   .impact { background: var(--ink); color: rgba(255,251,243,0.85); }
   .impact .section-sub { color: rgba(255,251,243,0.7); }
@@ -234,6 +289,18 @@
   .sat-card .num { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--sun); }
   .sat-card .lbl { margin-top: 12px; font-size: 0.875rem; font-weight: 600; color: rgba(255,251,243,0.8); }
   .sat-card .desc { margin-top: 8px; font-size: 0.75rem; line-height: 1.5; color: rgba(255,251,243,0.5); }
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid { margin-top: 64px; display: grid; gap: 24px; }
+  @media (min-width: 700px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
+  .testi-card { display: flex; flex-direction: column; border-radius: 24px; background: #fff; padding: 32px; box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); }
+  .testi-card svg.quote { width: 32px; height: 32px; }
+  .testi-card blockquote { margin-top: 16px; flex: 1; font-size: 1rem; line-height: 1.6; color: var(--ink); }
+  .testi-foot { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
+  .testi-foot .name { display: block; font-size: 0.9rem; font-weight: 700; color: var(--ink); }
+  .testi-foot .role { display: block; font-size: 0.75rem; color: var(--ink-soft); }
+  .testi-note { margin-top: 32px; text-align: center; font-size: 0.75rem; color: var(--ink-soft); }
 
   /* ---------- Partner / lead form ---------- */
   .partner { position: relative; overflow: hidden; }
@@ -306,8 +373,9 @@
     </a>
     <nav class="links">
       <a href="#what-is-dot">What is DOT</a>
-      <a href="#how-it-works">How It Works</a>
+      <a href="#program-levels">Program Levels</a>
       <a href="#offerings">What We Offer</a>
+      <a href="#benefits">Benefits</a>
       <a href="#impact">Impact</a>
     </nav>
     <a href="#partner" class="btn-primary nav-cta">Partner Your School</a>
@@ -317,9 +385,12 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#what-is-dot">What is DOT</a>
+    <a href="#program-levels">Program Levels</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#offerings">What We Offer</a>
+    <a href="#benefits">Benefits</a>
     <a href="#impact">Impact</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#partner" class="btn-primary" style="text-align:center;">Partner Your School</a>
   </div>
 </header>
@@ -356,19 +427,44 @@
     </div>
   </section>
 
-  <!-- ---------- What is DOT ---------- -->
+  <!-- ---------- What is DOT / 8 Areas of Learning ---------- -->
   <section id="what-is-dot" class="section" style="background:#fff;">
     <div class="wrap">
       <div class="heading-center">
-        <h2 class="section-title">What is the DOT program?</h2>
+        <span class="badge leaf">Aligned to NEP 2020 &amp; NCF</span>
+        <h2 class="section-title" style="margin-top:24px;">What is the DOT program?</h2>
         <p class="section-sub">
-          DOT stands for connecting the dots of early childhood. Instead of treating literacy,
-          movement, feelings and creativity as separate subjects, DOT weaves five developmental
-          "dots" into a single play-based classroom experience — so schools deliver whole-child
+          DOT stands for connecting the dots of early childhood. Instead of treating language,
+          literacy, numeracy, feelings and creativity as separate subjects, DOT weaves 8 areas of
+          learning into a single play-based classroom experience — so schools deliver whole-child
           development, not a checklist of activities.
         </p>
+        <p class="areas-subhead">
+          The DOT curriculum is designed in line with the National Education Policy (NEP) 2020 and
+          the National Curriculum Framework for Foundational Stage (NCF), so schools get play-based,
+          whole-child learning that also maps cleanly to national early-years guidelines.
+        </p>
       </div>
-      <div class="pillars-grid" id="pillarsGrid"></div>
+
+      <h3 class="areas-label">Our 8 Areas of Learning</h3>
+      <div class="areas-grid" id="areasGrid"></div>
+    </div>
+  </section>
+
+  <!-- ---------- Program Levels ---------- -->
+  <section id="program-levels" class="section" style="background:var(--cream);">
+    <div class="wrap">
+      <div class="heading-center">
+        <h2 class="section-title">Program levels, from LKG to Std 2</h2>
+        <p class="section-sub">
+          DOT grows with every child — four program levels carry them from their first classroom
+          routines through the early years of primary school.
+        </p>
+      </div>
+      <div class="levels-wrap">
+        <div class="levels-line"></div>
+        <div class="levels-grid" id="levelsGrid"></div>
+      </div>
     </div>
   </section>
 
@@ -408,6 +504,29 @@
     </div>
   </section>
 
+  <!-- ---------- Progress Tracking ---------- -->
+  <section id="progress-tracking" class="section tracking">
+    <div class="wrap tracking-grid">
+      <div class="tracking-copy">
+        <span class="tracking-badge">Built into the DOT app</span>
+        <h2 id="trackingHeadline"></h2>
+        <p id="trackingDesc"></p>
+      </div>
+      <div class="tracking-steps" id="trackingSteps"></div>
+    </div>
+  </section>
+
+  <!-- ---------- Benefits ---------- -->
+  <section id="benefits" class="section" style="background:#fff;">
+    <div class="wrap">
+      <div class="heading-center">
+        <h2 class="section-title">Who DOT benefits — and how</h2>
+        <p class="section-sub">One program, built to work for everyone in a child's learning circle.</p>
+      </div>
+      <div class="benefits-grid" id="benefitsGrid"></div>
+    </div>
+  </section>
+
   <!-- ---------- Impact ---------- -->
   <section id="impact" class="section impact">
     <div class="wrap">
@@ -430,6 +549,18 @@
           <p class="desc">of parents surveyed say DOT helped them stay meaningfully involved in their child's learning.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ---------- Testimonials ---------- -->
+  <section id="testimonials" class="section" style="background:var(--cream);">
+    <div class="wrap">
+      <div class="heading-center">
+        <h2 class="section-title">From schools, teachers and parents</h2>
+        <p class="section-sub">Real voices from the DOT learning circle.</p>
+      </div>
+      <div class="testi-grid" id="testiGrid"></div>
+      <p class="testi-note">Illustrative feedback from the DOT community. Names withheld for privacy.</p>
     </div>
   </section>
 
@@ -520,9 +651,12 @@
         <h3>Quick links</h3>
         <ul>
           <li><a href="#what-is-dot">What is DOT</a></li>
+          <li><a href="#program-levels">Program Levels</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#offerings">What We Offer</a></li>
+          <li><a href="#benefits">Benefits</a></li>
           <li><a href="#impact">Impact</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#partner">Partner Your School</a></li>
         </ul>
       </div>
@@ -546,18 +680,28 @@
   "use strict";
 
   /* ---------------- Data (mirrors the online site) ---------------- */
-  var pillars = [
-    { short: "Think", name: "Cognitive & Early Literacy", color: "coral", desc: "Number sense, pattern-finding, problem-solving and early reading built through hands-on discovery, not worksheets." },
-    { short: "Speak", name: "Language & Communication", color: "teal", desc: "Vocabulary, storytelling and confident expression, nurtured through songs, conversation and dramatic play." },
-    { short: "Move", name: "Motor & Physical Development", color: "sun", desc: "Fine and gross motor skills strengthened through movement, art, music and outdoor play every single day." },
-    { short: "Feel", name: "Social-Emotional Growth", color: "lavender", desc: "Empathy, self-regulation and friendship skills practiced in circle time, group play and guided reflection." },
-    { short: "Create", name: "Creativity & Imagination", color: "leaf", desc: "Open-ended art, pretend play and inquiry projects that let every child's imagination lead the way." }
+  var learningAreas = [
+    { name: "Language and Communication", color: "coral", desc: "Vocabulary, listening and confident self-expression built through conversation, storytelling and dramatic play." },
+    { name: "Literacy and Phonics", color: "teal", desc: "Sound awareness, letter recognition and early reading and writing skills, built step by step." },
+    { name: "Numeracy and Maths", color: "sun", desc: "Number sense, counting, patterns and early problem-solving through hands-on, playful exploration." },
+    { name: "Me and My World", color: "lavender", desc: "Awareness of self, family, community and environment — helping children make sense of the world around them." },
+    { name: "Social and Emotional Learning", color: "leaf", desc: "Empathy, self-regulation, sharing and friendship skills practiced through circle time and guided play." },
+    { name: "Art and Creative Expression", color: "rose", desc: "Open-ended art, music, and imaginative play that let every child's creativity lead the way." },
+    { name: "Movement and Coordination", color: "sky", desc: "Fine and gross motor skills strengthened daily through movement, games and structured physical play." },
+    { name: "Health and Safety", color: "steel", desc: "Everyday habits and awareness around hygiene, nutrition and personal safety, built into routines." }
+  ];
+
+  var programLevels = [
+    { grade: "LKG", dotName: "Little Dot", ageRange: "Ages 3–4", color: "coral", desc: "First steps into structured play-based learning — building comfort, curiosity and classroom routines." },
+    { grade: "UKG", dotName: "Big Dot", ageRange: "Ages 4–5", color: "teal", desc: "Deeper exploration across all 8 areas of learning, building the foundation for formal literacy and numeracy." },
+    { grade: "Std 1", dotName: "Tiny Dot", ageRange: "Ages 5–6", color: "sun", desc: "A gentle bridge into primary school — strengthening reading, writing and number skills through continued play." },
+    { grade: "Std 2", dotName: "Mighty Dot", ageRange: "Ages 6–7", color: "lavender", desc: "Building independence and confidence as children apply foundational skills to more complex, guided tasks." }
   ];
 
   var steps = [
     { title: "Discover & Assess", desc: "We start with your school's classrooms, age groups and goals to map DOT to your existing setup — no rebuild required." },
     { title: "Train & Certify Teachers", desc: "Every educator completes DOT's certification workshops and gets ongoing mentorship from our early-years specialists." },
-    { title: "Deliver the Curriculum", desc: "Daily, theme-based lesson plans guide play-based learning across all five developmental dots — right inside your classroom." },
+    { title: "Deliver the Curriculum", desc: "Daily, theme-based lesson plans guide play-based learning across all 8 areas of learning — right inside your classroom." },
     { title: "Engage Parents at Home", desc: "Parents get simple, guided activities and real-time updates through the DOT app, turning home into an extension of the classroom." },
     { title: "Track Growth & Insights", desc: "Teachers and school leaders see milestone tracking and classroom insights, so growth is visible, not just assumed." }
   ];
@@ -566,13 +710,13 @@
     { stat: "90%", desc: "of a child's brain develops before age five, making these the highest-leverage years in education." },
     { stat: "1:1", desc: "Play-based, one-concept-at-a-time learning builds attention and executive function far better than rote instruction." },
     { stat: "3x", desc: "Children with active parent involvement show significantly stronger language and social outcomes by kindergarten." },
-    { stat: "5", desc: "DOT develops all five domains of early childhood — cognitive, language, motor, social-emotional and creative — together, not in isolation." }
+    { stat: "8", desc: "DOT develops all 8 areas of early learning — language, literacy, numeracy and more — together, not in isolation." }
   ];
 
   var offerings = [
     { title: "Curriculum", tag: "A whole-child, play-based framework", color: "coral",
-      desc: "Theme-based, age-appropriate lesson plans spanning all five DOT pillars, sequenced week by week so teachers always know what's next.",
-      points: ["Age bands from playgroup through pre-primary (ages 2–6)", "Weekly themes with daily activity plans, songs and stories", "Built for play-based, inquiry-led classrooms", "Aligned to global early-years learning outcomes"] },
+      desc: "Theme-based, age-appropriate lesson plans spanning all 8 areas of learning, sequenced week by week so teachers always know what's next.",
+      points: ["4 program levels: Little Dot, Big Dot, Tiny Dot & Mighty Dot", "Weekly themes with daily activity plans, songs and stories", "Built for play-based, inquiry-led classrooms", "Aligned to NEP 2020 and the NCF for Foundational Stage"] },
     { title: "Teacher Training", tag: "Certified educators, ongoing mentorship", color: "teal",
       desc: "Every DOT teacher completes structured onboarding and certification, then continues learning through refreshers and classroom coaching.",
       points: ["Foundational certification workshop before rollout", "Termly refresher and skill-building sessions", "1:1 classroom mentorship from early-years specialists", "Practical, activity-first training — not just theory"] },
@@ -580,8 +724,57 @@
       desc: "Structured touchpoints and simple guided activities that help parents reinforce learning at home, without adding pressure.",
       points: ["Weekly take-home activities tied to classroom themes", "Parent orientation workshops each term", "Milestone updates shared in parent-friendly language", "Community events that build a parent support circle"] },
     { title: "Teacher & Parent App", tag: "Digital-first — no materials to manage", color: "lavender",
-      desc: "Everything teachers and parents need lives in the DOT app: lesson plans, activity guides and progress tracking, with nothing to print, ship or store.",
-      points: ["Daily lesson plans and activity guides for teachers", "Attendance and milestone tracking, digitized", "Parent app with real-time updates and messaging", "No physical kits or materials — fully digital delivery"] }
+      desc: "Everything teachers and parents need lives in the DOT app: lesson plans, activity guides and a built-in progress tracker, with nothing to print, ship or store.",
+      points: ["Daily lesson plans and activity guides for teachers", "Built-in progress tracking across all 8 areas of learning", "Parent app with real-time updates and messaging", "No physical kits or materials — fully digital delivery"] }
+  ];
+
+  var progressTracking = {
+    headline: "Every child, tracked across every area of learning",
+    desc: "The DOT program comes with a built-in progress tracking system that regularly tracks each child's learning and progress in developmental skills and across all 8 areas of learning. The goal is to catch gaps early, not after they've become setbacks.",
+    steps: [
+      { title: "Track", desc: "Teachers log observations and milestones against developmental skills and all 8 areas of learning, on a regular cadence." },
+      { title: "Assess Gaps", desc: "The tracker surfaces exactly where a child is progressing well and where they may be falling behind." },
+      { title: "Teachers Intervene", desc: "Teachers get clear, actionable signals so they can step in early with the right support for that child." },
+      { title: "No Child Falls Behind", desc: "Parents and school leaders see the same picture, so progress — and gaps — are visible to everyone, together." }
+    ]
+  };
+
+  var benefitGroups = [
+    { audience: "For Schools", color: "coral", items: [
+      "A ready-made, NEP 2020 & NCF-aligned curriculum — no in-house curriculum design needed",
+      "Certified, trained teachers with ongoing mentorship, reducing dependence on any one hire",
+      "A stronger enrollment pitch with a structured, outcomes-driven early-years program",
+      "Built-in progress tracking gives leadership visibility into classroom outcomes",
+      "Fully digital delivery — no materials to purchase, store or run out of"
+    ]},
+    { audience: "For Teachers", color: "teal", items: [
+      "Ready-to-use daily lesson plans across all 8 areas of learning — less prep time",
+      "Structured certification plus ongoing mentorship from early-years specialists",
+      "A simple app to plan, track and report — no paperwork-heavy processes",
+      "Clear visibility into each child's progress, making interventions easier to plan",
+      "A genuine growth path within a structured, well-supported program"
+    ]},
+    { audience: "For Parents", color: "sun", items: [
+      "Real-time visibility into what their child is learning, day to day",
+      "Simple, guided activities to extend learning at home — no guesswork",
+      "Regular, easy-to-understand updates on their child's developmental progress",
+      "A direct line to teachers through the DOT app",
+      "Confidence that gaps are caught early, not discovered too late"
+    ]},
+    { audience: "For Children", color: "lavender", items: [
+      "Joyful, play-based learning instead of rote instruction",
+      "Whole-child development across language, numeracy, social-emotional skills and more",
+      "Consistent, extra support the moment they need it — never left to fall behind",
+      "A gentle, confident bridge from pre-primary into primary school",
+      "A classroom environment built around how young children actually learn"
+    ]}
+  ];
+
+  var testimonials = [
+    { quote: "DOT gave us a structured, NEP-aligned early-years program without having to build a curriculum team of our own. Parent enquiries about our pre-primary section have gone up noticeably since we partnered.", name: "Principal", role: "DOT Partner School", color: "coral" },
+    { quote: "The daily lesson plans save me hours every week, and the progress tracker makes it so easy to spot which child needs extra support — I don't have to guess anymore.", name: "Pre-Primary Teacher", role: "DOT Certified Educator", color: "teal" },
+    { quote: "I finally know what my daughter is learning each day, not just at the term-end report. The home activities are simple enough that we actually do them together.", name: "Parent", role: "Big Dot (UKG) Family", color: "sun" },
+    { quote: "My son used to dread structured activities. With DOT's play-based approach he asks to do his 'DOT time' at home now — that shift alone was worth it for us.", name: "Parent", role: "Little Dot (LKG) Family", color: "lavender" }
   ];
 
   var impactStats = [
@@ -603,10 +796,14 @@
     teal: { bg: "var(--teal-light)", text: "var(--teal-dark)", solid: "var(--teal)" },
     sun: { bg: "var(--sun-light)", text: "var(--sun-dark)", solid: "var(--sun)" },
     lavender: { bg: "var(--lavender-light)", text: "var(--lavender-dark)", solid: "var(--lavender)" },
-    leaf: { bg: "var(--leaf-light)", text: "var(--leaf-dark)", solid: "var(--leaf)" }
+    leaf: { bg: "var(--leaf-light)", text: "var(--leaf-dark)", solid: "var(--leaf)" },
+    rose: { bg: "var(--rose-light)", text: "var(--rose-dark)", solid: "var(--rose)" },
+    sky: { bg: "var(--sky-light)", text: "var(--sky-dark)", solid: "var(--sky)" },
+    steel: { bg: "var(--steel-light)", text: "var(--steel-dark)", solid: "var(--steel)" }
   };
 
   var checkSvg = '<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0l-3.5-3.5a1 1 0 111.4-1.4l2.8 2.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg>';
+  var quoteSvg = '<svg class="quote" viewBox="0 0 32 32" fill="currentColor"><path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2V8z"/></svg>';
 
   var icons = {
     school: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 5l9 5.5-9 5.5-9-5.5Z" stroke-linejoin="round"/><path d="M6 12.5V17c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-4.5" stroke-linejoin="round"/></svg>',
@@ -633,18 +830,34 @@
     heroStats.appendChild(wrap);
   });
 
-  // Pillars
-  var pillarsGrid = document.getElementById("pillarsGrid");
-  pillars.forEach(function (p, i) {
-    var c = colorMap[p.color];
-    var card = el("div", "pillar-card");
+  // 8 Areas of Learning
+  var areasGrid = document.getElementById("areasGrid");
+  learningAreas.forEach(function (a, i) {
+    var c = colorMap[a.color];
+    var card = el("div", "area-card");
     card.innerHTML =
-      '<div class="pillar-num" style="background:' + c.bg + ';color:' + c.text + ';">' + (i + 1) + '</div>' +
-      '<h3>' + p.short + '</h3>' +
-      '<p class="pillar-name">' + p.name + '</p>' +
-      '<p class="desc">' + p.desc + '</p>' +
-      '<span class="pillar-marker" style="background:' + c.solid + ';"></span>';
-    pillarsGrid.appendChild(card);
+      '<div class="area-num" style="background:' + c.bg + ';color:' + c.text + ';">' + (i + 1) + '</div>' +
+      '<h4>' + a.name + '</h4>' +
+      '<p class="desc">' + a.desc + '</p>' +
+      '<span class="area-marker" style="background:' + c.solid + ';"></span>';
+    areasGrid.appendChild(card);
+  });
+
+  // Program levels
+  var levelsGrid = document.getElementById("levelsGrid");
+  programLevels.forEach(function (lvl) {
+    var c = colorMap[lvl.color];
+    var item = el("div", "level-item");
+    item.innerHTML =
+      '<div class="level-circle" style="background:' + c.bg + ';color:' + c.text + ';">' +
+        '<span class="name">' + lvl.dotName.split(" ")[0] + '</span>' +
+        '<span class="tag">Dot</span>' +
+      '</div>' +
+      '<span class="level-grade" style="background:' + c.bg + ';color:' + c.text + ';"><span class="dot" style="background:' + c.solid + ';"></span>' + lvl.grade + '</span>' +
+      '<h3>' + lvl.dotName + '</h3>' +
+      '<p class="age">' + lvl.ageRange + '</p>' +
+      '<p class="desc">' + lvl.desc + '</p>';
+    levelsGrid.appendChild(item);
   });
 
   // Steps
@@ -684,6 +897,33 @@
     offerGrid.appendChild(card);
   });
 
+  // Progress tracking
+  document.getElementById("trackingHeadline").textContent = progressTracking.headline;
+  document.getElementById("trackingDesc").textContent = progressTracking.desc;
+  var trackingSteps = document.getElementById("trackingSteps");
+  progressTracking.steps.forEach(function (s, i) {
+    var card = el("div", "tracking-step");
+    card.innerHTML =
+      '<div class="tstep-num">' + (i + 1) + '</div>' +
+      '<h4>' + s.title + '</h4>' +
+      '<p>' + s.desc + '</p>';
+    trackingSteps.appendChild(card);
+  });
+
+  // Benefits
+  var benefitsGrid = document.getElementById("benefitsGrid");
+  benefitGroups.forEach(function (g) {
+    var c = colorMap[g.color];
+    var card = el("div", "benefit-card");
+    var itemsHtml = g.items.map(function (item) {
+      return '<li><span style="color:' + c.text + ';">' + checkSvg + '</span><span>' + item + '</span></li>';
+    }).join("");
+    card.innerHTML =
+      '<span class="benefit-tag" style="background:' + c.bg + ';color:' + c.text + ';">' + g.audience + '</span>' +
+      '<ul class="benefit-list">' + itemsHtml + '</ul>';
+    benefitsGrid.appendChild(card);
+  });
+
   // Impact cards
   var impactGrid = document.getElementById("impactGrid");
   impactStats.forEach(function (s) {
@@ -709,6 +949,21 @@
 
   document.getElementById("satNum").setAttribute("data-count", parentSatisfaction);
   document.getElementById("satNum").setAttribute("data-suffix", "%");
+
+  // Testimonials
+  var testiGrid = document.getElementById("testiGrid");
+  testimonials.forEach(function (t) {
+    var c = colorMap[t.color];
+    var card = el("figure", "testi-card");
+    card.innerHTML =
+      '<span style="color:' + c.text + ';">' + quoteSvg + '</span>' +
+      '<blockquote>“' + t.quote + '”</blockquote>' +
+      '<figcaption class="testi-foot">' +
+        '<span class="testi-avatar" style="background:' + c.bg + ';color:' + c.text + ';">' + t.name.charAt(0) + '</span>' +
+        '<span><span class="name">' + t.name + '</span><span class="role">' + t.role + '</span></span>' +
+      '</figcaption>';
+    testiGrid.appendChild(card);
+  });
 
   document.getElementById("year").textContent = new Date().getFullYear();
 

@@ -4,8 +4,9 @@ import { useState } from "react";
 
 const links = [
   { href: "#what-is-dot", label: "What is DOT" },
-  { href: "#how-it-works", label: "How It Works" },
+  { href: "#program-levels", label: "Program Levels" },
   { href: "#offerings", label: "What We Offer" },
+  { href: "#benefits", label: "Benefits" },
   { href: "#impact", label: "Impact" },
 ];
 

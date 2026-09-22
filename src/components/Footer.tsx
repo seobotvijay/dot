@@ -1,8 +1,11 @@
 const quickLinks = [
   { href: "#what-is-dot", label: "What is DOT" },
+  { href: "#program-levels", label: "Program Levels" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#offerings", label: "What We Offer" },
+  { href: "#benefits", label: "Benefits" },
   { href: "#impact", label: "Impact" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#partner", label: "Partner Your School" },
 ];
 
