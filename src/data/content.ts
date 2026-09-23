@@ -393,3 +393,56 @@ export const growthByYear: { year: string; schools: number }[] = [
 ];
 
 export const parentSatisfaction = 96;
+
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+export const faqs: Faq[] = [
+  {
+    question: "What is the DOT program?",
+    answer:
+      "DOT is a play-based early years program that pre-primary schools adopt as their curriculum. It covers 8 areas of learning across four program levels — Little Dot, Big Dot, Tiny Dot and Mighty Dot — and pairs the curriculum with teacher training, a parent engagement program and a teacher & parent app.",
+  },
+  {
+    question: "Is DOT aligned with NEP 2020 and NCF?",
+    answer:
+      "Yes. The DOT curriculum is designed in line with India's National Education Policy (NEP) 2020 and the National Curriculum Framework for Foundational Stage (NCF), so schools get play-based, whole-child learning that also maps to national early-years guidelines.",
+  },
+  {
+    question: "What grades and ages does the DOT program cover?",
+    answer:
+      "DOT covers four program levels: Little Dot for LKG (ages 3–4), Big Dot for UKG (ages 4–5), Tiny Dot for Std 1 (ages 5–6), and Mighty Dot for Std 2 (ages 6–7).",
+  },
+  {
+    question: "What are DOT's 8 Areas of Learning?",
+    answer:
+      "The 8 areas are Language and Communication, Literacy and Phonics, Numeracy and Maths, Me and My World, Social and Emotional Learning, Art and Creative Expression, Movement and Coordination, and Health and Safety.",
+  },
+  {
+    question: "Does a school need to buy physical materials or kits to run DOT?",
+    answer:
+      "No. DOT is fully digital — lesson plans, activity guides and progress tracking all live in the teacher & parent app. There are no physical kits or materials to order, store or run out of.",
+  },
+  {
+    question: "How does DOT's progress tracking system work?",
+    answer:
+      "The DOT app includes a built-in progress tracker that regularly records each child's learning and progress in developmental skills and across all 8 areas of learning. It's designed to surface gaps early, so teachers can step in with the right support before a child falls behind.",
+  },
+  {
+    question: "What training do DOT teachers receive?",
+    answer:
+      "Every DOT teacher completes a foundational certification workshop before rollout, then continues with termly refresher sessions and ongoing 1:1 classroom mentorship from early-years specialists.",
+  },
+  {
+    question: "How are parents involved in the DOT program?",
+    answer:
+      "Through DOT's Parent Engagement Program, parents get weekly take-home activities tied to classroom themes, termly orientation workshops, real-time updates through the DOT app, and community events with other DOT families.",
+  },
+  {
+    question: "How can a school partner with DOT?",
+    answer:
+      "Schools can fill out the partnership form on this site. A DOT partnership specialist will then walk through curriculum, teacher training and rollout, typically starting with a free classroom demo before the school commits.",
+  },
+];

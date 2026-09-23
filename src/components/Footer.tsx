@@ -6,6 +6,7 @@ const quickLinks = [
   { href: "#benefits", label: "Benefits" },
   { href: "#impact", label: "Impact" },
   { href: "#testimonials", label: "Testimonials" },
+  { href: "#faq", label: "FAQ" },
   { href: "#partner", label: "Partner Your School" },
 ];
 

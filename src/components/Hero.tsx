@@ -8,11 +8,11 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-teal-light px-4 py-1.5 text-sm font-semibold text-teal-dark">
-            A play-based program for pre-primary schools
+            NEP 2020 &amp; NCF-aligned pre-primary program
           </span>
 
           <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">
-            Every child is a{" "}
+            DOT: every child is a{" "}
             <span className="relative whitespace-nowrap text-coral">
               constellation
             </span>{" "}
@@ -20,9 +20,10 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft">
-            DOT is a whole-child early years program that schools bring in as their
-            pre-primary curriculum — pairing play-based learning with teacher
-            training, parent engagement and a dedicated app, so every dot of a
+            DOT is a whole-child early years program and pre-primary curriculum that
+            schools adopt from LKG through Std 2 — pairing play-based learning across
+            8 areas of learning with teacher training, a parent engagement program
+            and a dedicated teacher &amp; parent app, so every dot of a
             child&apos;s development connects into confident growth.
           </p>
 
