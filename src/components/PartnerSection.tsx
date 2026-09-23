@@ -14,14 +14,15 @@ export default function PartnerSection() {
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
             Tell us a little about your school and one of our partnership
-            specialists will walk you through curriculum, training and rollout —
-            no materials to order, ever.
+            specialists will walk you through curriculum, materials, training
+            and rollout — everything included.
           </p>
 
           <ul className="mt-8 space-y-4">
             {[
               "A free classroom demo before you commit",
               "Full teacher certification within your first term",
+              "Hands-on materials included — story books, worksheets, workbooks and more",
               "Dedicated onboarding for your leadership team",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-ink">

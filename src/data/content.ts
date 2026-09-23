@@ -182,13 +182,13 @@ export type Offering = {
 export const offerings: Offering[] = [
   {
     title: "Curriculum",
-    tagline: "A whole-child, play-based framework",
+    tagline: "A whole-child, hands-on activity framework",
     description:
-      "Theme-based, age-appropriate lesson plans spanning all 8 areas of learning, sequenced week by week so teachers always know what's next.",
+      "Theme-based, age-appropriate weekly plans spanning all 8 areas of learning, packed with hands-on activities, worksheets and original stories so teachers always know what's next.",
     points: [
       "4 program levels: Little Dot, Big Dot, Tiny Dot & Mighty Dot",
-      "Weekly themes with daily activity plans, songs and stories",
-      "Built for play-based, inquiry-led classrooms",
+      "30+ weekly plans (LKG) and 32+ weekly plans (UKG) each year",
+      "2,500+ hands-on activities and 500+ worksheets every year",
       "Aligned to NEP 2020 and the NCF for Foundational Stage",
     ],
     color: "coral",
@@ -221,17 +221,38 @@ export const offerings: Offering[] = [
   },
   {
     title: "Teacher & Parent App",
-    tagline: "Digital-first — no materials to manage",
+    tagline: "Your daily companion, in class and at home",
     description:
-      "Everything teachers and parents need lives in the DOT app: lesson plans, activity guides and a built-in progress tracker, with nothing to print, ship or store.",
+      "The DOT app guides teachers through daily lesson plans and hands-on activities, and keeps parents connected with real-time updates and a built-in progress tracker — working hand-in-hand with DOT's storybooks, worksheets and workbooks.",
     points: [
       "Daily lesson plans and activity guides for teachers",
       "Built-in progress tracking across all 8 areas of learning",
       "Parent app with real-time updates and messaging",
-      "No physical kits or materials — fully digital delivery",
+      "Pairs with DOT's story books, worksheets and workbooks",
     ],
     color: "lavender",
   },
+];
+
+export type MaterialItem = {
+  value?: number;
+  suffix?: string;
+  label: string;
+};
+
+export const materialsIncluded: MaterialItem[] = [
+  { value: 30, suffix: "+", label: "Weekly plans for Little Dots (LKG)" },
+  { value: 32, suffix: "+", label: "Weekly plans for Big Dots (UKG)" },
+  { value: 2500, suffix: "+", label: "Hands-on activities per year" },
+  { value: 500, suffix: "+", label: "Worksheets per year" },
+  { value: 100, suffix: "+", label: "Original story books" },
+  { value: 300, suffix: "+", label: "Original rhymes" },
+  { label: "Age-appropriate workbooks" },
+  { value: 20, suffix: "+", label: "Decodable readers" },
+  { label: "Theme books and phonics books" },
+  { label: "Parent workshops" },
+  { label: "Teacher app and guide" },
+  { label: "Interactive teaching and learning materials" },
 ];
 
 export const progressTracking = {
@@ -273,7 +294,7 @@ export const benefits: BenefitGroup[] = [
       "Certified, trained teachers with ongoing mentorship, reducing dependence on any one hire",
       "A stronger enrollment pitch with a structured, outcomes-driven early-years program",
       "Built-in progress tracking gives leadership visibility into classroom outcomes",
-      "Fully digital delivery — no materials to purchase, store or run out of",
+      "A full set of hands-on materials included — story books, worksheets, workbooks and more",
     ],
   },
   {
@@ -421,9 +442,9 @@ export const faqs: Faq[] = [
       "The 8 areas are Language and Communication, Literacy and Phonics, Numeracy and Maths, Me and My World, Social and Emotional Learning, Art and Creative Expression, Movement and Coordination, and Health and Safety.",
   },
   {
-    question: "Does a school need to buy physical materials or kits to run DOT?",
+    question: "What learning materials come with the DOT program?",
     answer:
-      "No. DOT is fully digital — lesson plans, activity guides and progress tracking all live in the teacher & parent app. There are no physical kits or materials to order, store or run out of.",
+      "DOT includes a full set of hands-on learning materials: 30+ weekly plans for Little Dots (LKG) and 32+ for Big Dots (UKG), 2,500+ hands-on activities and 500+ worksheets every year, 100+ original story books, 300+ original rhymes, age-appropriate workbooks, 20+ decodable readers, theme and phonics books, and interactive teaching and learning materials — plus the teacher app and guide and regular parent workshops.",
   },
   {
     question: "How does DOT's progress tracking system work?",

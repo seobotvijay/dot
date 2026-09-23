@@ -3,6 +3,7 @@ import WhatIsDot from "@/components/WhatIsDot";
 import ProgramLevels from "@/components/ProgramLevels";
 import HowAndWhy from "@/components/HowAndWhy";
 import Offerings from "@/components/Offerings";
+import MaterialsIncluded from "@/components/MaterialsIncluded";
 import ProgressTracking from "@/components/ProgressTracking";
 import Benefits from "@/components/Benefits";
 import Insights from "@/components/Insights";
@@ -19,6 +20,7 @@ export default function Home() {
       <ProgramLevels />
       <HowAndWhy />
       <Offerings />
+      <MaterialsIncluded />
       <ProgressTracking />
       <Benefits />
       <Insights />

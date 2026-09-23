@@ -92,8 +92,8 @@
     padding: 16px 24px; max-width: 1152px; margin: 0 auto;
   }
   .brand {
-    display: flex; align-items: center; gap: 8px;
-    font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink);
+    display: flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--ink);
   }
   .brand-dot {
     display: flex; align-items: center; justify-content: center;
@@ -101,7 +101,7 @@
   }
   .brand-dot span { width: 10px; height: 10px; border-radius: 999px; background: var(--cream); }
   .brand .accent { color: var(--coral); }
-  nav.links { display: none; gap: 28px; align-items: center; }
+  nav.links { display: none; gap: 24px; align-items: center; flex-shrink: 0; }
   nav.links a { font-size: 0.88rem; font-weight: 500; color: var(--ink-soft); transition: color 0.15s; white-space: nowrap; }
   nav.links a:hover { color: var(--coral); }
   .btn-primary {
@@ -115,7 +115,7 @@
     padding: 12px 24px; font-size: 0.95rem; font-weight: 600; background: transparent; transition: border-color 0.15s, color 0.15s;
   }
   .btn-secondary:hover { border-color: var(--teal); color: var(--teal-dark); }
-  .nav-cta { display: none; }
+  .nav-cta { display: none; flex-shrink: 0; white-space: nowrap; }
   .nav-toggle {
     display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center;
     width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(31,42,68,0.1); background: none; flex-shrink: 0;
@@ -125,7 +125,7 @@
   .mobile-menu.open { display: flex; flex-direction: column; gap: 16px; }
   .mobile-menu a { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1100px) {
     nav.links { display: flex; }
     .nav-cta { display: inline-block; }
     .nav-toggle { display: none; }
@@ -240,6 +240,14 @@
   /* ---------- Offerings ---------- */
   .offer-grid { margin-top: 64px; display: grid; gap: 24px; }
   @media (min-width: 768px) { .offer-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* ---------- Materials Included ---------- */
+  .materials-grid { margin-top: 64px; display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 768px) { .materials-grid { grid-template-columns: repeat(4, 1fr); } }
+  .material-card { display: flex; flex-direction: column; justify-content: center; border-radius: 16px; background: var(--cream); padding: 24px; text-align: center; box-shadow: 0 1px 0 rgba(31,42,68,0.03); }
+  .material-card .num { font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; color: var(--coral); }
+  .material-card .check { margin: 0 auto; width: 24px; height: 24px; color: var(--teal-dark); }
+  .material-card .lbl { margin-top: 8px; font-size: 0.85rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
   .offer-card { border-radius: 24px; border: 2px solid transparent; background: var(--cream); padding: 32px; transition: border-color 0.15s; }
   .offer-tag { display: inline-flex; border-radius: 999px; padding: 4px 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
   .offer-card h3 { margin-top: 16px; font-size: 1.5rem; font-weight: 700; color: var(--ink); }
@@ -312,6 +320,42 @@
   .testi-foot .name { display: block; font-size: 0.9rem; font-weight: 700; color: var(--ink); }
   .testi-foot .role { display: block; font-size: 0.75rem; color: var(--ink-soft); }
   .testi-note { margin-top: 32px; text-align: center; font-size: 0.75rem; color: var(--ink-soft); }
+
+  /* ---------- Blog ---------- */
+  .blog-head { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; justify-content: space-between; }
+  @media (min-width: 700px) { .blog-head { flex-direction: row; align-items: flex-end; } }
+  .blog-head .lede { max-width: 520px; }
+  .blog-grid { margin-top: 56px; display: grid; gap: 24px; }
+  @media (min-width: 700px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(4, 1fr); } }
+  .blog-card {
+    display: flex; flex-direction: column; border-radius: 24px; background: #fff; padding: 28px;
+    box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -16px rgba(31,42,68,0.25); }
+  .blog-card .meta { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); }
+  .blog-card h3 { margin-top: 10px; font-size: 1.05rem; line-height: 1.3; font-weight: 700; color: var(--ink); }
+  .blog-card p { margin-top: 10px; flex: 1; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
+  .blog-card .read-link { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: var(--coral); }
+  .blog-card .read-link svg { width: 16px; height: 16px; }
+
+  .blog-post-list { margin-top: 72px; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(31,42,68,0.1); }
+  .blog-post { scroll-margin-top: 90px; padding-top: 56px; border-bottom: 1px solid rgba(31,42,68,0.1); padding-bottom: 56px; }
+  .blog-post .meta { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); }
+  .blog-post h3.post-title { margin-top: 10px; font-size: 1.75rem; line-height: 1.25; color: var(--ink); }
+  .blog-post .excerpt { margin-top: 12px; font-size: 1.05rem; line-height: 1.6; color: var(--ink-soft); }
+  .blog-prose { margin-top: 32px; color: var(--ink-soft); font-size: 1rem; line-height: 1.8; }
+  .blog-prose h4 { margin-top: 2em; margin-bottom: 0.5em; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); }
+  .blog-prose p { margin-top: 1.1em; }
+  .blog-prose ul, .blog-prose ol { margin-top: 1.1em; padding-left: 1.4em; }
+  .blog-prose ul { list-style: disc; }
+  .blog-prose ol { list-style: decimal; }
+  .blog-prose li + li { margin-top: 0.4em; }
+  .blog-prose li::marker { color: var(--coral); }
+  .blog-prose strong { color: var(--ink); font-weight: 700; }
+  .blog-prose a { color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .blog-post .faq-list { margin-top: 40px; }
+  .blog-post .back-link { display: inline-block; margin-top: 32px; font-size: 0.85rem; font-weight: 700; color: var(--teal-dark); }
 
   /* ---------- FAQ ---------- */
   .faq-list { margin-top: 56px; display: flex; flex-direction: column; gap: 12px; }
@@ -459,8 +503,8 @@
       },
       {
         "@type": "Question",
-        "name": "Does a school need to buy physical materials or kits to run DOT?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. DOT is fully digital — lesson plans, activity guides and progress tracking all live in the teacher & parent app. There are no physical kits or materials to order, store or run out of." }
+        "name": "What learning materials come with the DOT program?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DOT includes a full set of hands-on learning materials: 30+ weekly plans for Little Dots (LKG) and 32+ for Big Dots (UKG), 2,500+ hands-on activities and 500+ worksheets every year, 100+ original story books, 300+ original rhymes, age-appropriate workbooks, 20+ decodable readers, theme and phonics books, and interactive teaching and learning materials — plus the teacher app and guide and regular parent workshops." }
       },
       {
         "@type": "Question",
@@ -501,9 +545,8 @@
       <a href="#what-is-dot">What is DOT</a>
       <a href="#program-levels">Program Levels</a>
       <a href="#offerings">What We Offer</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#impact">Impact</a>
       <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="#partner" class="btn-primary nav-cta">Partner Your School</a>
@@ -519,6 +562,7 @@
     <a href="#benefits">Benefits</a>
     <a href="#impact">Impact</a>
     <a href="#testimonials">Testimonials</a>
+    <a href="#blog">Blog</a>
     <a href="#faq">FAQ</a>
     <a href="#partner" class="btn-primary" style="text-align:center;">Partner Your School</a>
   </div>
@@ -625,11 +669,25 @@
       <div class="heading-center">
         <h2 class="section-title">What we offer schools</h2>
         <p class="section-sub">
-          A complete, digital-first program — curriculum, people and technology, with no physical
-          materials for your school to order, store or run out of.
+          A complete package for your classroom — hands-on materials, trained people and
+          technology, all included and ready to use from day one.
         </p>
       </div>
       <div class="offer-grid" id="offerGrid"></div>
+    </div>
+  </section>
+
+  <!-- ---------- Materials Included ---------- -->
+  <section id="materials" class="section" style="background:#fff;">
+    <div class="wrap">
+      <div class="heading-center">
+        <h2 class="section-title">Everything included with DOT</h2>
+        <p class="section-sub">
+          A full set of hands-on materials for every classroom — nothing extra to design,
+          print, or source on your own.
+        </p>
+      </div>
+      <div class="materials-grid" id="materialsGrid"></div>
     </div>
   </section>
 
@@ -693,6 +751,245 @@
     </div>
   </section>
 
+  <!-- ---------- Blog ---------- -->
+  <section id="blog" class="section" style="background:var(--cream);">
+    <div class="wrap">
+      <div class="blog-head">
+        <div>
+          <h2 class="section-title">From the DOT blog</h2>
+          <p class="lede" style="margin-top:20px;">Practical guidance on NEP 2020, early childhood development, and running a genuinely play-based pre-primary curriculum.</p>
+        </div>
+      </div>
+
+      <div class="blog-grid">
+        <a class="blog-card" href="#post-nep-2020">
+          <span class="meta">12 January 2026 · 3 min read</span>
+          <h3>NEP 2020 and Pre-Primary Schools: What It Actually Changes</h3>
+          <p>NEP 2020 formally brought ages 3–8 into India's school system for the first time. Here's what that means for a pre-primary school's curriculum, staffing and daily routine.</p>
+          <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
+        </a>
+        <a class="blog-card" href="#post-8-areas">
+          <span class="meta">19 January 2026 · 3 min read</span>
+          <h3>8 Areas of Early Childhood Development Every Pre-Primary Program Should Cover</h3>
+          <p>Most preschool curriculums focus heavily on early literacy and numeracy. Whole-child development means covering 8 areas together — here's what each one actually involves.</p>
+          <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
+        </a>
+        <a class="blog-card" href="#post-lkg-vs-ukg">
+          <span class="meta">26 January 2026 · 3 min read</span>
+          <h3>LKG vs UKG: What Changes Developmentally Each Year</h3>
+          <p>LKG and UKG are often treated as interchangeable "preschool years." Developmentally, they're not — here's what should actually change between them.</p>
+          <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
+        </a>
+        <a class="blog-card" href="#post-progress-tracking">
+          <span class="meta">2 February 2026 · 2 min read</span>
+          <h3>How Progress Tracking Prevents Learning Gaps in Early Years</h3>
+          <p>By the time a learning gap shows up in a term-end report, a child may have been struggling for months. Regular, structured tracking catches it far earlier.</p>
+          <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
+        </a>
+      </div>
+
+      <div class="blog-post-list">
+
+        <article id="post-nep-2020" class="blog-post">
+          <span class="meta">12 January 2026 · 3 min read</span>
+          <h3 class="post-title">NEP 2020 and Pre-Primary Schools: What It Actually Changes</h3>
+          <p class="excerpt">A plain-language guide to what India's National Education Policy (NEP) 2020 means for pre-primary schools, and what an NEP-aligned curriculum needs to include.</p>
+          <div class="blog-prose">
+            <p>NEP 2020 — India's National Education Policy, released in 2020 — is the first national policy to formally bring children aged 3 to 8 into the school system as a single "Foundational Stage." For pre-primary schools, that's not a minor footnote: it changes what a curriculum for 3–6 year-olds is expected to look like, and who owns responsibility for getting it right.</p>
+            <p>This guide covers what actually changed, in plain language, without assuming you've read the full policy document.</p>
+            <h4>The 10+2 structure is gone</h4>
+            <p>For decades, Indian schooling was described as 10+2: ten years of school followed by two years of senior secondary. NEP 2020 replaces that with a 5+3+3+4 structure:</p>
+            <ul>
+              <li><strong>Foundational Stage (5 years):</strong> 3 years of pre-primary/preschool + Grades 1–2</li>
+              <li><strong>Preparatory Stage (3 years):</strong> Grades 3–5</li>
+              <li><strong>Middle Stage (3 years):</strong> Grades 6–8</li>
+              <li><strong>Secondary Stage (4 years):</strong> Grades 9–12</li>
+            </ul>
+            <p>The key shift for pre-primary schools is the first bracket. Ages 3–6, which used to sit outside the formal school system in most policy conversations, are now explicitly Year 1–3 of a child's schooling — grouped together with Grades 1 and 2, not treated as a separate "before school" phase.</p>
+            <h4>What NEP 2020 expects from the Foundational Stage</h4>
+            <p>NEP 2020 and the related National Curriculum Framework for Foundational Stage (NCF) are specific about <em>how</em> these years should be taught, not just that they should exist. The broad expectations are:</p>
+            <ul>
+              <li><strong>Play-based and activity-based learning</strong>, not textbook-driven instruction</li>
+              <li><strong>Multiple areas of development</strong> addressed together — language, cognitive, motor, social-emotional, and creative — rather than literacy and numeracy in isolation</li>
+              <li><strong>Formal reading and writing introduced gradually</strong>, generally not before age 5–6</li>
+              <li><strong>Trained educators</strong> for early years, recognizing that teaching 3–6 year-olds is a distinct skill from teaching older grades</li>
+            </ul>
+            <p>For a pre-primary school, this means a curriculum built around worksheets and rote memorization doesn't just feel outdated — it's misaligned with the stated national framework your school may eventually be evaluated against.</p>
+            <h4>What this means for your curriculum, in practice</h4>
+            <p>If you're evaluating (or building) a pre-primary curriculum with NEP 2020 in mind, three things matter most:</p>
+            <ol>
+              <li><strong>Coverage across multiple developmental areas</strong>, not just early literacy and numeracy. A curriculum organized around a handful of narrow subjects won't reflect the whole-child approach NEP calls for.</li>
+              <li><strong>A play-based delivery model</strong> — daily activities, not worksheets, as the primary teaching method.</li>
+              <li><strong>Structured teacher training</strong>, since NEP's expectations only translate into classroom practice if educators are trained to deliver play-based learning, not simply handed a textbook.</li>
+            </ol>
+            <p>DOT's curriculum was built around these three points directly — it covers <a href="#what-is-dot">8 areas of learning</a> delivered through play-based, day-to-day classroom activities, mapped across four <a href="#program-levels">program levels</a> from LKG through Std 2, with teacher certification built in rather than assumed.</p>
+            <h4>The bottom line</h4>
+            <p>NEP 2020 doesn't just add new terminology to early childhood education — it puts pre-primary schooling on the same policy footing as the rest of the school system, with specific expectations about how those years should be taught. Schools that treat pre-primary as a lighter, less structured stage are increasingly out of step with where the policy — and parent expectations — are heading.</p>
+            <p>If you're reviewing your school's current pre-primary approach against NEP 2020, <a href="#offerings">see how DOT's curriculum is structured</a> or <a href="#partner">get in touch to talk it through</a>.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Does NEP 2020 apply to pre-primary schools?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>Yes. NEP 2020 is the first Indian education policy to formally bring ages 3–8 into the school system as the "Foundational Stage," covering 3 years of pre-primary (anganwadi/preschool) plus Grades 1–2.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What is the 5+3+3+4 structure in NEP 2020?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>It replaces the older 10+2 structure. The first "5" is the Foundational Stage (3 years pre-primary + Grades 1–2), followed by 3 years Preparatory (Grades 3–5), 3 years Middle (Grades 6–8), and 4 years Secondary (Grades 9–12).</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is a play-based curriculum required under NEP 2020?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>NEP 2020 and the NCF for Foundational Stage both call for play-based, activity-based learning rather than formal, textbook-driven instruction in the Foundational Stage, with formal literacy and numeracy introduced gradually from around Grade 1.</p>
+            </details>
+          </div>
+          <a class="back-link" href="#blog">← Back to all posts</a>
+        </article>
+
+        <article id="post-8-areas" class="blog-post">
+          <span class="meta">19 January 2026 · 3 min read</span>
+          <h3 class="post-title">8 Areas of Early Childhood Development Every Pre-Primary Program Should Cover</h3>
+          <p class="excerpt">A breakdown of the 8 areas of development a whole-child pre-primary curriculum should address — language, literacy, numeracy, social-emotional skills and more.</p>
+          <div class="blog-prose">
+            <p>Ask most parents what their child "learns" in preschool, and the answer is usually letters, numbers, and maybe some colors. That's not wrong — but it's a narrow slice of what a well-designed pre-primary curriculum should actually cover.</p>
+            <p>Early childhood research is fairly consistent on this point: a 3–6 year-old's development isn't a set of separate subjects. Language, motor skills, emotional regulation, and cognitive growth develop together, and a curriculum that only targets early literacy and numeracy is leaving real developmental ground uncovered.</p>
+            <p>Here are the 8 areas a genuinely whole-child pre-primary program should address.</p>
+            <h4>1. Language and Communication</h4>
+            <p>Vocabulary, listening skills, and the confidence to express a thought out loud. This is built less through direct instruction and more through conversation, storytelling, and dramatic play — a child narrating their own pretend-play scenario is doing real language development work.</p>
+            <h4>2. Literacy and Phonics</h4>
+            <p>Sound awareness, letter recognition, and the early building blocks of reading and writing. Critically, this should be sequenced <em>after</em> strong language foundations, not instead of them — phonics taught in isolation, without the vocabulary and listening skills to support it, tends not to stick.</p>
+            <h4>3. Numeracy and Maths</h4>
+            <p>Number sense, counting, pattern recognition and early problem-solving — introduced through hands-on, playful exploration (sorting objects, comparing sizes, simple games) rather than worksheets and rote counting.</p>
+            <h4>4. Me and My World</h4>
+            <p>Awareness of self, family, community and environment. This is where a child starts to make sense of who they are and how they relate to the people and world around them — often overlooked, but foundational to everything else on this list.</p>
+            <h4>5. Social and Emotional Learning</h4>
+            <p>Empathy, self-regulation, sharing, and friendship skills, usually built through circle time, guided group play, and adults modeling how to name and work through feelings. This area matters more than it's often given credit for: a child who can't yet self-regulate will struggle to focus on literacy or numeracy activities, regardless of how well those are taught.</p>
+            <h4>6. Art and Creative Expression</h4>
+            <p>Open-ended art, music, and imaginative play, where the process matters more than the output. This is one of the few areas where there's no "correct" answer — and that's the point.</p>
+            <h4>7. Movement and Coordination</h4>
+            <p>Fine motor skills (holding a crayon, using scissors) and gross motor skills (running, balancing, climbing), built through daily movement, games, and structured physical play. Fine motor development in particular is a direct prerequisite for handwriting later on.</p>
+            <h4>8. Health and Safety</h4>
+            <p>Everyday habits and awareness — hygiene, nutrition, and personal safety — built into classroom routines rather than taught as a one-off lesson.</p>
+            <h4>Why cover all 8 together, not separately</h4>
+            <p>The case for whole-child development isn't just philosophical. These areas reinforce each other in practice: a child with stronger social-emotional regulation engages better with literacy activities; a child with stronger fine motor skills has an easier time with early writing; a child with a richer vocabulary picks up phonics faster. Treating these as eight disconnected subjects misses how a 3–6 year-old actually develops.</p>
+            <p>This is the structure DOT's curriculum is built around — all <a href="#what-is-dot">8 areas of learning</a> woven into a single play-based classroom experience, rather than delivered as separate subjects. <a href="#program-levels">See how it's sequenced across program levels</a>, or <a href="#partner">talk to us about bringing it to your school</a>.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>What are the main areas of early childhood development?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>A whole-child early years curriculum typically covers language and communication, literacy and phonics, numeracy and maths, awareness of self and community, social and emotional learning, art and creative expression, movement and coordination, and health and safety.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Why shouldn't a preschool curriculum focus only on literacy and numeracy?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>Early childhood research consistently shows that language, motor, social-emotional and creative development are interdependent — a child's social-emotional regulation, for example, directly affects their ability to focus and learn early literacy and numeracy skills.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How is social-emotional learning taught in pre-primary?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>Typically through structured routines like circle time, guided group play, and adult-modeled conflict resolution, rather than as a standalone lesson — it's built into how the classroom day runs, not a separate subject.</p>
+            </details>
+          </div>
+          <a class="back-link" href="#blog">← Back to all posts</a>
+        </article>
+
+        <article id="post-lkg-vs-ukg" class="blog-post">
+          <span class="meta">26 January 2026 · 3 min read</span>
+          <h3 class="post-title">LKG vs UKG: What Changes Developmentally Each Year</h3>
+          <p class="excerpt">What actually differs between LKG and UKG beyond the label — developmental expectations, curriculum focus, and what should carry over into Std 1.</p>
+          <div class="blog-prose">
+            <p>LKG and UKG are sometimes talked about as if they're the same year repeated twice — "preschool," broadly. Developmentally, that's a mistake. A 3-year-old and a 4-year-old are working with meaningfully different capabilities, and a curriculum that doesn't reflect that is either too advanced for LKG or not enough for UKG.</p>
+            <p>Here's what should actually differ between the two years.</p>
+            <h4>LKG (Little Dot): first steps into structured learning</h4>
+            <p>LKG is typically a child's first sustained experience with a structured classroom — sitting in a group, following simple routines, and separating from a parent or caregiver for part of the day. At this stage (roughly ages 3–4), the priority isn't academic content. It's:</p>
+            <ul>
+              <li>Building comfort with classroom routines and group settings</li>
+              <li>Early language development through conversation, songs, and stories</li>
+              <li>Fine and gross motor development through play</li>
+              <li>First exposure to numbers, letters, and shapes — through play, not instruction</li>
+            </ul>
+            <p>Pushing formal literacy or numeracy instruction too early in LKG tends to backfire. At this age, a child's attention span and fine motor control usually aren't ready for sustained writing practice, and forcing it can create early negative associations with "schoolwork" that are hard to undo.</p>
+            <h4>UKG (Big Dot): deeper exploration, still play-based</h4>
+            <p>By UKG (roughly ages 4–5), children have more classroom experience and stronger attention spans. This is where the curriculum should get more deliberate — not more formal, but more structured — across all areas of learning:</p>
+            <ul>
+              <li>More structured phonics and pre-reading activities, building on LKG's language foundation</li>
+              <li>Number sense and early pattern recognition, moving beyond simple counting</li>
+              <li>Longer, more complex group activities and cooperative play</li>
+              <li>Growing independence in routines (managing their own materials, following multi-step instructions)</li>
+            </ul>
+            <p>The mistake schools make here often isn't adding more structure — it's swapping play-based delivery for worksheets in the name of "getting ready for Std 1." NEP 2020 and the NCF for Foundational Stage are explicit that UKG should still be play-based; what changes is the depth and complexity of what's being explored, not the format.</p>
+            <h4>What should carry into Std 1</h4>
+            <p>Under NEP 2020's 5+3+3+4 structure, Std 1 is still part of the same Foundational Stage as LKG and UKG — not a separate, more "serious" phase. The habits and skills built in UKG should carry forward directly:</p>
+            <ul>
+              <li>Sound awareness and early reading skills built on in UKG should extend into formal literacy in Std 1</li>
+              <li>Number sense should extend into structured early maths</li>
+              <li>Fine motor control built through UKG activities should support the transition into regular handwriting</li>
+              <li>Classroom routines and independence should make the shift into Std 1 feel like a continuation, not a reset</li>
+            </ul>
+            <p>A curriculum that treats LKG, UKG and Std 1 as one continuous developmental arc — rather than three disconnected years — makes that transition far smoother for both children and teachers.</p>
+            <p>This is exactly how DOT sequences its curriculum: <a href="#program-levels">Little Dot (LKG) and Big Dot (UKG)</a> build directly into Tiny Dot (Std 1), with the same 8 areas of learning deepening year over year rather than resetting. <a href="#program-levels">See the full program level breakdown</a>.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>What is the age difference between LKG and UKG?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>LKG (Lower Kindergarten) is typically for children aged 3–4, and UKG (Upper Kindergarten) for children aged 4–5, though exact cutoffs vary by school and region.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is UKG more academic than LKG?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>UKG should build on LKG with more structured exploration across all areas of learning and a stronger foundation for formal literacy and numeracy, but it should still be delivered through play-based activities, not worksheets or rote drilling, per NEP 2020 and NCF guidance.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What should carry over from UKG into Std 1?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>The habits and foundational skills built in UKG — sound awareness, number sense, fine motor control, and classroom routines — should carry forward directly into Std 1, which under NEP 2020 is still part of the same Foundational Stage, not a separate academic phase.</p>
+            </details>
+          </div>
+          <a class="back-link" href="#blog">← Back to all posts</a>
+        </article>
+
+        <article id="post-progress-tracking" class="blog-post" style="border-bottom:none;">
+          <span class="meta">2 February 2026 · 2 min read</span>
+          <h3 class="post-title">How Progress Tracking Prevents Learning Gaps in Early Years</h3>
+          <p class="excerpt">Why regular, structured progress tracking in pre-primary classrooms catches developmental gaps early — and what a good early years tracking system should actually measure.</p>
+          <div class="blog-prose">
+            <p>Most pre-primary schools assess progress at fixed points — a mid-term check-in, a term-end report. That cadence works reasonably well for catching gaps that are already obvious. It's much less effective at catching the ones that aren't yet.</p>
+            <p>By the time a developmental gap is visible enough to show up in a term-end report, a child may have been quietly struggling with it for weeks or months — and because early years skills build on each other, an unaddressed gap in one area (fine motor control, social-emotional regulation, phonics awareness) tends to compound into others.</p>
+            <h4>What "progress tracking" should actually mean in pre-primary</h4>
+            <p>For younger children, this isn't the same as testing. Meaningful progress tracking in early years looks more like:</p>
+            <ul>
+              <li><strong>Regular observation, not periodic testing.</strong> A teacher logging what they see during normal classroom activities, on an ongoing basis, rather than administering a formal assessment every few months.</li>
+              <li><strong>Coverage across all areas of development</strong>, not just early literacy and numeracy. A tracker that only measures reading and counting misses the social-emotional and motor gaps that often show up first.</li>
+              <li><strong>Visible to more than just the teacher.</strong> Parents and school leadership should be able to see the same picture the teacher sees, not just a summary at term-end.</li>
+            </ul>
+            <h4>Why this catches gaps earlier</h4>
+            <p>The core advantage of regular tracking over periodic assessment is simple: shorter feedback loops. If a teacher is logging observations regularly across all developmental areas, a gap becomes visible within days or weeks of it starting to emerge — not months later, once it's compounded into something bigger.</p>
+            <p>This matters more in early years than in any later stage of school. A 4-year-old who's quietly behind on fine motor development, for example, isn't just behind on "art" — that gap will show up again in handwriting readiness for Std 1 if it isn't caught and supported early.</p>
+            <h4>What happens after a gap is identified</h4>
+            <p>Tracking on its own doesn't help unless it leads to action. A useful early years tracking system should make it easy for a teacher to:</p>
+            <ol>
+              <li>See exactly where a specific child is progressing well and where they're not, across all areas — not just an overall score</li>
+              <li>Get that signal early enough to intervene with simple, targeted support (not a formal remediation program — usually just more focused attention in that specific area)</li>
+              <li>Keep parents in the loop with the same information, so home and classroom support are aligned</li>
+            </ol>
+            <h4>Built into DOT, not bolted on afterward</h4>
+            <p>This is the model behind <a href="#progress-tracking">DOT's built-in progress tracking system</a> — every child is tracked regularly against developmental skills and all 8 areas of learning, with the explicit goal of catching gaps early enough that a teacher can step in before they compound. <a href="#progress-tracking">See how the tracking system works</a>, or <a href="#partner">talk to us about bringing it to your school</a>.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Why is early progress tracking important in preschool?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>Because early childhood development moves quickly and unevenly — a gap in one area (like fine motor skills or social-emotional regulation) can affect a child's progress in others, and the earlier it's identified, the easier it is to address with simple, targeted support.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What should a preschool progress tracker actually measure?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>A good tracker should cover developmental skills and all areas of learning together — not just early literacy and numeracy — logged regularly by the teacher rather than assessed only at term-end.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How often should a child's progress be tracked in pre-primary?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+              <p>Regularly — ideally as part of routine classroom observation rather than a periodic formal test, so gaps are visible as they emerge rather than discovered only at a term-end review.</p>
+            </details>
+          </div>
+          <a class="back-link" href="#blog">← Back to all posts</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ---------- FAQ ---------- -->
   <section id="faq" class="section" style="background:#fff;">
     <div class="wrap" style="max-width:768px;">
@@ -718,8 +1015,8 @@
           <p>The 8 areas are Language and Communication, Literacy and Phonics, Numeracy and Maths, Me and My World, Social and Emotional Learning, Art and Creative Expression, Movement and Coordination, and Health and Safety.</p>
         </details>
         <details class="faq-item">
-          <summary>Does a school need to buy physical materials or kits to run DOT?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-          <p>No. DOT is fully digital — lesson plans, activity guides and progress tracking all live in the teacher &amp; parent app. There are no physical kits or materials to order, store or run out of.</p>
+          <summary>What learning materials come with the DOT program?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
+          <p>DOT includes a full set of hands-on learning materials: 30+ weekly plans for Little Dots (LKG) and 32+ for Big Dots (UKG), 2,500+ hands-on activities and 500+ worksheets every year, 100+ original story books, 300+ original rhymes, age-appropriate workbooks, 20+ decodable readers, theme and phonics books, and interactive teaching and learning materials — plus the teacher app and guide and regular parent workshops.</p>
         </details>
         <details class="faq-item">
           <summary>How does DOT's progress tracking system work?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
@@ -750,11 +1047,12 @@
         <h2>Bring DOT to your school</h2>
         <p class="lede">
           Tell us a little about your school and one of our partnership specialists will walk you
-          through curriculum, training and rollout — no materials to order, ever.
+          through curriculum, materials, training and rollout — everything included.
         </p>
         <ul class="partner-list">
           <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0l-3.5-3.5a1 1 0 111.4-1.4l2.8 2.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>A free classroom demo before you commit</span></li>
           <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0l-3.5-3.5a1 1 0 111.4-1.4l2.8 2.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Full teacher certification within your first term</span></li>
+          <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0l-3.5-3.5a1 1 0 111.4-1.4l2.8 2.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Hands-on materials included — story books, worksheets, workbooks and more</span></li>
           <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0l-3.5-3.5a1 1 0 111.4-1.4l2.8 2.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Dedicated onboarding for your leadership team</span></li>
         </ul>
       </div>
@@ -831,9 +1129,11 @@
           <li><a href="#program-levels">Program Levels</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#offerings">What We Offer</a></li>
+          <li><a href="#materials">Materials Included</a></li>
           <li><a href="#benefits">Benefits</a></li>
           <li><a href="#impact">Impact</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#partner">Partner Your School</a></li>
         </ul>
@@ -892,18 +1192,33 @@
   ];
 
   var offerings = [
-    { title: "Curriculum", tag: "A whole-child, play-based framework", color: "coral",
-      desc: "Theme-based, age-appropriate lesson plans spanning all 8 areas of learning, sequenced week by week so teachers always know what's next.",
-      points: ["4 program levels: Little Dot, Big Dot, Tiny Dot & Mighty Dot", "Weekly themes with daily activity plans, songs and stories", "Built for play-based, inquiry-led classrooms", "Aligned to NEP 2020 and the NCF for Foundational Stage"] },
+    { title: "Curriculum", tag: "A whole-child, hands-on activity framework", color: "coral",
+      desc: "Theme-based, age-appropriate weekly plans spanning all 8 areas of learning, packed with hands-on activities, worksheets and original stories so teachers always know what's next.",
+      points: ["4 program levels: Little Dot, Big Dot, Tiny Dot & Mighty Dot", "30+ weekly plans (LKG) and 32+ weekly plans (UKG) each year", "2,500+ hands-on activities and 500+ worksheets every year", "Aligned to NEP 2020 and the NCF for Foundational Stage"] },
     { title: "Teacher Training", tag: "Certified educators, ongoing mentorship", color: "teal",
       desc: "Every DOT teacher completes structured onboarding and certification, then continues learning through refreshers and classroom coaching.",
       points: ["Foundational certification workshop before rollout", "Termly refresher and skill-building sessions", "1:1 classroom mentorship from early-years specialists", "Practical, activity-first training — not just theory"] },
     { title: "Parent Engagement Program", tag: "Home becomes part of the classroom", color: "sun",
       desc: "Structured touchpoints and simple guided activities that help parents reinforce learning at home, without adding pressure.",
       points: ["Weekly take-home activities tied to classroom themes", "Parent orientation workshops each term", "Milestone updates shared in parent-friendly language", "Community events that build a parent support circle"] },
-    { title: "Teacher & Parent App", tag: "Digital-first — no materials to manage", color: "lavender",
-      desc: "Everything teachers and parents need lives in the DOT app: lesson plans, activity guides and a built-in progress tracker, with nothing to print, ship or store.",
-      points: ["Daily lesson plans and activity guides for teachers", "Built-in progress tracking across all 8 areas of learning", "Parent app with real-time updates and messaging", "No physical kits or materials — fully digital delivery"] }
+    { title: "Teacher & Parent App", tag: "Your daily companion, in class and at home", color: "lavender",
+      desc: "The DOT app guides teachers through daily lesson plans and hands-on activities, and keeps parents connected with real-time updates and a built-in progress tracker — working hand-in-hand with DOT's story books, worksheets and workbooks.",
+      points: ["Daily lesson plans and activity guides for teachers", "Built-in progress tracking across all 8 areas of learning", "Parent app with real-time updates and messaging", "Pairs with DOT's story books, worksheets and workbooks"] }
+  ];
+
+  var materialsIncluded = [
+    { value: 30, suffix: "+", label: "Weekly plans for Little Dots (LKG)" },
+    { value: 32, suffix: "+", label: "Weekly plans for Big Dots (UKG)" },
+    { value: 2500, suffix: "+", label: "Hands-on activities per year" },
+    { value: 500, suffix: "+", label: "Worksheets per year" },
+    { value: 100, suffix: "+", label: "Original story books" },
+    { value: 300, suffix: "+", label: "Original rhymes" },
+    { label: "Age-appropriate workbooks" },
+    { value: 20, suffix: "+", label: "Decodable readers" },
+    { label: "Theme books and phonics books" },
+    { label: "Parent workshops" },
+    { label: "Teacher app and guide" },
+    { label: "Interactive teaching and learning materials" }
   ];
 
   var progressTracking = {
@@ -923,7 +1238,7 @@
       "Certified, trained teachers with ongoing mentorship, reducing dependence on any one hire",
       "A stronger enrollment pitch with a structured, outcomes-driven early-years program",
       "Built-in progress tracking gives leadership visibility into classroom outcomes",
-      "Fully digital delivery — no materials to purchase, store or run out of"
+      "A full set of hands-on materials included — story books, worksheets, workbooks and more"
     ]},
     { audience: "For Teachers", color: "teal", items: [
       "Ready-to-use daily lesson plans across all 8 areas of learning — less prep time",
@@ -1075,6 +1390,17 @@
     offerGrid.appendChild(card);
   });
 
+  // Materials included
+  var materialsGrid = document.getElementById("materialsGrid");
+  materialsIncluded.forEach(function (m) {
+    var card = el("div", "material-card");
+    var topHtml = m.value
+      ? '<p class="num" data-count="' + m.value + '" data-suffix="' + (m.suffix || "") + '">0' + (m.suffix || "") + '</p>'
+      : '<span class="check">' + checkSvg + '</span>';
+    card.innerHTML = topHtml + '<p class="lbl">' + m.label + '</p>';
+    materialsGrid.appendChild(card);
+  });
+
   // Progress tracking
   document.getElementById("trackingHeadline").textContent = progressTracking.headline;
   document.getElementById("trackingDesc").textContent = progressTracking.desc;
@@ -1189,6 +1515,18 @@
     });
   }, { threshold: 0.3 });
   observer.observe(impactSection);
+
+  var materialsSection = document.getElementById("materials");
+  var materialsAnimated = false;
+  var materialsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !materialsAnimated) {
+        materialsAnimated = true;
+        document.querySelectorAll(".material-card .num").forEach(animateCount);
+      }
+    });
+  }, { threshold: 0.3 });
+  materialsObserver.observe(materialsSection);
 
   /* ---------------- Lead form (offline: localStorage + mailto) ---------------- */
   var LEADS_KEY = "dotLeads";

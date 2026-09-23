@@ -39,8 +39,8 @@ export default function Offerings() {
             What we offer schools
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-ink-soft">
-            A complete, digital-first program — curriculum, people and technology,
-            with no physical materials for your school to order, store or run out of.
+            A complete package for your classroom — hands-on materials, trained people
+            and technology, all included and ready to use from day one.
           </p>
         </div>
 
