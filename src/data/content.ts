@@ -427,6 +427,11 @@ export const faqs: Faq[] = [
       "DOT is a play-based early years program that pre-primary schools adopt as their curriculum. It covers 8 areas of learning across four program levels — Little Dot, Big Dot, Tiny Dot and Mighty Dot — and pairs the curriculum with teacher training, a parent engagement program and a teacher & parent app.",
   },
   {
+    question: "Why DOT?",
+    answer:
+      "DOT brings curriculum, hands-on materials, teacher training, parent engagement and progress tracking together in one NEP 2020 & NCF-aligned program, so schools don't have to piece it together from separate vendors. It's built around whole-child development across all 8 areas of learning, not just early literacy and numeracy, with built-in progress tracking that catches gaps early so no child falls behind.",
+  },
+  {
     question: "Is DOT aligned with NEP 2020 and NCF?",
     answer:
       "Yes. The DOT curriculum is designed in line with India's National Education Policy (NEP) 2020 and the National Curriculum Framework for Foundational Stage (NCF), so schools get play-based, whole-child learning that also maps to national early-years guidelines.",
