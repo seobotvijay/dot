@@ -19,415 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --cream: #fffbf3;
-    --ink: #1f2a44;
-    --ink-soft: #4a5570;
-
-    --coral: #ff6f59;
-    --coral-dark: #e14f3a;
-    --coral-light: #ffe4de;
-
-    --teal: #2aa9a0;
-    --teal-dark: #1f7f78;
-    --teal-light: #dcf4f1;
-
-    --sun: #ffc53d;
-    --sun-dark: #e4a30f;
-    --sun-light: #fff3d6;
-
-    --lavender: #8c7ae6;
-    --lavender-dark: #6c58cf;
-    --lavender-light: #ece8fc;
-
-    --leaf: #4caf7d;
-    --leaf-dark: #368a5f;
-    --leaf-light: #ddf2e6;
-
-    --rose: #e8628f;
-    --rose-dark: #c94571;
-    --rose-light: #fce4ec;
-
-    --sky: #4a9fe0;
-    --sky-dark: #2f7fbe;
-    --sky-light: #dceefb;
-
-    --steel: #6b7a99;
-    --steel-dark: #4f5c77;
-    --steel-light: #e4e7ee;
-
-    --font-display: "Baloo 2", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--ink);
-    font-family: var(--font-body);
-    line-height: 1.5;
-  }
-  h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; }
-  p { margin: 0; }
-  ul, ol { margin: 0; padding: 0; list-style: none; }
-  a { color: inherit; text-decoration: none; }
-  img { max-width: 100%; display: block; }
-  button { font-family: inherit; cursor: pointer; }
-
-  .wrap { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
-  .section { padding: 96px 0; }
-
-  /* ---------- Nav ---------- */
-  header.nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255, 251, 243, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(31,42,68,0.06);
-  }
-  .nav-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 24px; max-width: 1152px; margin: 0 auto;
-  }
-  .brand {
-    display: flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap;
-    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--ink);
-  }
-  .brand-dot {
-    display: flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px; border-radius: 999px; background: var(--coral);
-  }
-  .brand-dot span { width: 10px; height: 10px; border-radius: 999px; background: var(--cream); }
-  .brand .accent { color: var(--coral); }
-  nav.links { display: none; gap: 24px; align-items: center; flex-shrink: 0; }
-  nav.links a { font-size: 0.88rem; font-weight: 500; color: var(--ink-soft); transition: color 0.15s; white-space: nowrap; }
-  nav.links a:hover { color: var(--coral); }
-  .btn-primary {
-    display: inline-block; border-radius: 999px; background: var(--coral); color: var(--cream);
-    padding: 12px 24px; font-size: 0.95rem; font-weight: 600; box-shadow: 0 8px 20px -8px rgba(255,111,89,0.5);
-    transition: transform 0.15s, background 0.15s; border: none;
-  }
-  .btn-primary:hover { transform: scale(1.04); background: var(--coral-dark); }
-  .btn-secondary {
-    display: inline-block; border-radius: 999px; border: 2px solid rgba(31,42,68,0.1); color: var(--ink);
-    padding: 12px 24px; font-size: 0.95rem; font-weight: 600; background: transparent; transition: border-color 0.15s, color 0.15s;
-  }
-  .btn-secondary:hover { border-color: var(--teal); color: var(--teal-dark); }
-  .nav-cta { display: none; flex-shrink: 0; white-space: nowrap; }
-  .nav-toggle {
-    display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(31,42,68,0.1); background: none; flex-shrink: 0;
-  }
-  .nav-toggle span { width: 18px; height: 2px; background: var(--ink); }
-  .mobile-menu { display: none; border-top: 1px solid rgba(31,42,68,0.06); padding: 16px 24px; }
-  .mobile-menu.open { display: flex; flex-direction: column; gap: 16px; }
-  .mobile-menu a { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); }
-
-  @media (min-width: 1100px) {
-    nav.links { display: flex; }
-    .nav-cta { display: inline-block; }
-    .nav-toggle { display: none; }
-  }
-
-  /* ---------- Hero ---------- */
-  .hero { position: relative; overflow: hidden; padding: 64px 0 96px; }
-  .dot-grid-bg {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0.08;
-    background-image: radial-gradient(var(--ink) 1px, transparent 1px);
-    background-size: 22px 22px;
-  }
-  .hero-inner { position: relative; display: grid; gap: 48px; align-items: center; }
-  .badge {
-    display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;
-    background: var(--teal-light); color: var(--teal-dark); padding: 6px 16px; font-size: 0.85rem; font-weight: 600;
-  }
-  .badge.coral { background: var(--coral-light); color: var(--coral-dark); }
-  .badge.leaf { background: var(--leaf-light); color: var(--leaf-dark); }
-  h1.headline { margin-top: 24px; font-size: 2.25rem; font-weight: 700; line-height: 1.15; color: var(--ink); }
-  h1.headline .accent { color: var(--coral); white-space: nowrap; }
-  .lede { margin-top: 24px; max-width: 480px; font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft); }
-  .cta-row { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-  .hero-stats {
-    margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    border-top: 1px solid rgba(31,42,68,0.1); padding-top: 32px;
-  }
-  .hero-stats .num { font-size: 1.5rem; font-weight: 700; color: var(--ink); font-family: var(--font-display); }
-  .hero-stats .lbl { margin-top: 4px; font-size: 0.75rem; font-weight: 500; color: var(--ink-soft); }
-  .hero-art { position: relative; display: flex; align-items: center; justify-content: center; }
-  .hero-art-inner { position: relative; width: 100%; max-width: 380px; aspect-ratio: 1 / 1; }
-  .hero-art-circle {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  }
-  .hero-art-circle .core { width: 240px; height: 240px; border-radius: 999px; background: var(--coral-light); }
-  .float-dot {
-    position: absolute; width: 64px; height: 64px; border-radius: 999px; box-shadow: 0 12px 24px -8px rgba(31,42,68,0.25);
-    animation: float-slow 6s ease-in-out infinite;
-  }
-  @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-  @media (min-width: 768px) {
-    .hero-inner { grid-template-columns: 1fr 1fr; }
-    h1.headline { font-size: 3rem; }
-    .cta-row { flex-direction: row; }
-  }
-
-  /* ---------- Section heading ---------- */
-  .heading-center { max-width: 640px; margin: 0 auto; text-align: center; }
-  .section-title {
-    position: relative; display: inline-block; font-size: 1.875rem; font-weight: 700; color: var(--ink);
-    padding-bottom: 10px;
-    background-image: radial-gradient(var(--coral) 3px, transparent 3px);
-    background-size: 14px 10px; background-repeat: repeat-x; background-position: bottom;
-  }
-  .section-sub { margin-top: 32px; font-size: 1.1rem; line-height: 1.7; color: var(--ink-soft); }
-  @media (min-width: 640px) { .section-title { font-size: 2.25rem; } }
-
-  /* ---------- What is DOT / 8 Areas ---------- */
-  .areas-subhead { margin-top: 20px; font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft); }
-  .areas-label { margin: 64px 0 0; text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--ink); }
-  .areas-grid { margin-top: 40px; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .area-card {
-    position: relative; border-radius: 16px; border: 1px solid rgba(31,42,68,0.05); background: var(--cream);
-    padding: 22px; transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .area-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -16px rgba(31,42,68,0.2); }
-  .area-num {
-    display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px;
-    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
-  }
-  .area-card h4 { margin-top: 14px; font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
-  .area-card p.desc { margin-top: 10px; font-size: 0.82rem; line-height: 1.55; color: var(--ink-soft); }
-  .area-marker { position: absolute; top: -7px; right: -7px; width: 14px; height: 14px; border-radius: 999px; }
-
-  /* ---------- Program levels ---------- */
-  .levels-wrap { position: relative; margin-top: 64px; }
-  .levels-line { position: absolute; left: 0; right: 0; top: 44px; height: 2px; background: rgba(31,42,68,0.1); display: none; }
-  .levels-grid { display: grid; gap: 40px; }
-  @media (min-width: 900px) { .levels-grid { grid-template-columns: repeat(4, 1fr); } .levels-line { display: block; } }
-  .level-item { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .level-circle {
-    z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 88px; height: 88px; border-radius: 999px; box-shadow: 0 0 0 8px var(--cream);
-  }
-  .level-circle .name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; line-height: 1; }
-  .level-circle .tag { margin-top: 4px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-  .level-grade { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 12px; font-size: 0.72rem; font-weight: 700; }
-  .level-grade .dot { width: 6px; height: 6px; border-radius: 999px; }
-  .level-item h3 { margin-top: 12px; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
-  .level-item .age { margin-top: 2px; font-size: 0.72rem; font-weight: 600; color: var(--ink-soft); }
-  .level-item p.desc { margin-top: 12px; max-width: 220px; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
-
-  /* ---------- How & Why ---------- */
-  .how-why { background: color-mix(in srgb, var(--teal-light) 40%, transparent); }
-  .how-why-grid { display: grid; gap: 64px; }
-  @media (min-width: 1024px) { .how-why-grid { grid-template-columns: 1fr 1fr; } }
-  ol.steps { margin-top: 40px; border-left: 2px solid rgba(42,169,160,0.3); padding-left: 32px; display: flex; flex-direction: column; gap: 32px; }
-  ol.steps li { position: relative; }
-  .step-num {
-    position: absolute; left: -49px; display: flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px; border-radius: 999px; background: var(--teal); color: var(--cream);
-    font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
-  }
-  ol.steps h3 { font-size: 1.1rem; font-weight: 700; color: var(--ink); }
-  ol.steps p { margin-top: 4px; font-size: 0.875rem; line-height: 1.6; color: var(--ink-soft); }
-  .why-grid { margin-top: 40px; display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
-  .why-card { border-radius: 16px; background: #fff; padding: 24px; box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); }
-  .why-card .stat { font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; color: var(--coral); }
-  .why-card p { margin-top: 8px; font-size: 0.875rem; line-height: 1.6; color: var(--ink-soft); }
-
-  /* ---------- Offerings ---------- */
-  .offer-grid { margin-top: 64px; display: grid; gap: 24px; }
-  @media (min-width: 768px) { .offer-grid { grid-template-columns: 1fr 1fr; } }
-
-  /* ---------- Materials Included ---------- */
-  .materials-grid { margin-top: 64px; display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
-  @media (min-width: 768px) { .materials-grid { grid-template-columns: repeat(4, 1fr); } }
-  .material-card { display: flex; flex-direction: column; justify-content: center; border-radius: 16px; background: var(--cream); padding: 24px; text-align: center; box-shadow: 0 1px 0 rgba(31,42,68,0.03); }
-  .material-card .num { font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; color: var(--coral); }
-  .material-card .check { margin: 0 auto; width: 24px; height: 24px; color: var(--teal-dark); }
-  .material-card .lbl { margin-top: 8px; font-size: 0.85rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
-  .offer-card { border-radius: 24px; border: 2px solid transparent; background: var(--cream); padding: 32px; transition: border-color 0.15s; }
-  .offer-tag { display: inline-flex; border-radius: 999px; padding: 4px 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
-  .offer-card h3 { margin-top: 16px; font-size: 1.5rem; font-weight: 700; color: var(--ink); }
-  .offer-card .desc { margin-top: 12px; font-size: 0.875rem; line-height: 1.6; color: var(--ink-soft); }
-  .offer-points { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-  .offer-points li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; color: var(--ink); }
-  .offer-points svg { flex-shrink: 0; margin-top: 2px; width: 20px; height: 20px; }
-
-  /* ---------- Progress tracking ---------- */
-  .tracking { background: color-mix(in srgb, var(--teal-light) 40%, transparent); }
-  .tracking-grid { display: grid; gap: 64px; align-items: center; }
-  @media (min-width: 1024px) { .tracking-grid { grid-template-columns: 1fr 1fr; } }
-  .tracking-badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; background: #fff; color: var(--teal-dark); padding: 6px 16px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 1px 0 rgba(31,42,68,0.05); }
-  .tracking-copy h2 { margin-top: 24px; font-size: 1.875rem; font-weight: 700; color: var(--ink); }
-  .tracking-copy p { margin-top: 24px; font-size: 1.1rem; line-height: 1.7; color: var(--ink-soft); }
-  .tracking-steps { display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
-  .tracking-step { border-radius: 16px; background: #fff; padding: 24px; box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); }
-  .tracking-step .tstep-num { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: var(--teal); color: var(--cream); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
-  .tracking-step h4 { margin-top: 16px; font-size: 1rem; font-weight: 700; color: var(--ink); }
-  .tracking-step p { margin-top: 8px; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
-
-  /* ---------- Benefits ---------- */
-  .benefits-grid { margin-top: 64px; display: grid; gap: 24px; }
-  @media (min-width: 700px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1100px) { .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
-  .benefit-card { border-radius: 24px; border: 1px solid rgba(31,42,68,0.08); background: var(--cream); padding: 24px; }
-  .benefit-tag { display: inline-flex; border-radius: 999px; padding: 4px 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
-  .benefit-list { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
-  .benefit-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; line-height: 1.55; color: var(--ink); }
-  .benefit-list svg { flex-shrink: 0; margin-top: 2px; width: 16px; height: 16px; }
-
-  /* ---------- Impact ---------- */
-  .impact { background: var(--ink); color: rgba(255,251,243,0.85); }
-  .impact .section-sub { color: rgba(255,251,243,0.7); }
-  .impact h2 { color: var(--cream); }
-  .impact-grid { margin-top: 64px; display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
-  @media (min-width: 1024px) { .impact-grid { grid-template-columns: repeat(4, 1fr); } }
-  .impact-card { border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 24px; }
-  .impact-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(255,111,89,0.2); color: var(--coral); }
-  .impact-icon svg { width: 22px; height: 22px; }
-  .impact-card .num { margin-top: 20px; font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; color: var(--cream); }
-  .impact-card .lbl { margin-top: 4px; font-size: 0.875rem; font-weight: 600; color: rgba(255,251,243,0.8); }
-  .impact-card .desc { margin-top: 8px; font-size: 0.75rem; line-height: 1.5; color: rgba(255,251,243,0.5); }
-
-  .impact-bottom { margin-top: 40px; display: grid; gap: 24px; }
-  @media (min-width: 1024px) { .impact-bottom { grid-template-columns: 2fr 1fr; } }
-  .chart-card { border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 24px 32px; }
-  .chart-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--cream); }
-  .chart-bars { margin-top: 32px; display: flex; align-items: flex-end; gap: 16px; }
-  .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .chart-col .bar-track { height: 160px; width: 100%; display: flex; align-items: flex-end; }
-  .chart-col .bar { width: 100%; border-radius: 8px 8px 0 0; background: linear-gradient(to top, var(--teal), var(--teal-light)); }
-  .chart-col .year { font-size: 0.75rem; font-weight: 600; color: rgba(255,251,243,0.6); }
-  .sat-card {
-    border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    padding: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-  }
-  .sat-card .num { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--sun); }
-  .sat-card .lbl { margin-top: 12px; font-size: 0.875rem; font-weight: 600; color: rgba(255,251,243,0.8); }
-  .sat-card .desc { margin-top: 8px; font-size: 0.75rem; line-height: 1.5; color: rgba(255,251,243,0.5); }
-
-  /* ---------- Testimonials ---------- */
-  .testi-grid { margin-top: 64px; display: grid; gap: 24px; }
-  @media (min-width: 700px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
-  .testi-card { display: flex; flex-direction: column; border-radius: 24px; background: #fff; padding: 32px; box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); }
-  .testi-card svg.quote { width: 32px; height: 32px; }
-  .testi-card blockquote { margin-top: 16px; flex: 1; font-size: 1rem; line-height: 1.6; color: var(--ink); }
-  .testi-foot { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
-  .testi-avatar { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
-  .testi-foot .name { display: block; font-size: 0.9rem; font-weight: 700; color: var(--ink); }
-  .testi-foot .role { display: block; font-size: 0.75rem; color: var(--ink-soft); }
-  .testi-note { margin-top: 32px; text-align: center; font-size: 0.75rem; color: var(--ink-soft); }
-
-  /* ---------- Blog ---------- */
-  .blog-head { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; justify-content: space-between; }
-  @media (min-width: 700px) { .blog-head { flex-direction: row; align-items: flex-end; } }
-  .blog-head .lede { max-width: 520px; }
-  .blog-grid { margin-top: 56px; display: grid; gap: 24px; }
-  @media (min-width: 700px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(4, 1fr); } }
-  .blog-card {
-    display: flex; flex-direction: column; border-radius: 24px; background: #fff; padding: 28px;
-    box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); border: 1px solid rgba(31,42,68,0.05); transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -16px rgba(31,42,68,0.25); }
-  .blog-card .meta { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); }
-  .blog-card h3 { margin-top: 10px; font-size: 1.05rem; line-height: 1.3; font-weight: 700; color: var(--ink); }
-  .blog-card p { margin-top: 10px; flex: 1; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
-  .blog-card .read-link { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: var(--coral); }
-  .blog-card .read-link svg { width: 16px; height: 16px; }
-
-  .blog-post-list { margin-top: 72px; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(31,42,68,0.1); }
-  .blog-post { scroll-margin-top: 90px; padding-top: 56px; border-bottom: 1px solid rgba(31,42,68,0.1); padding-bottom: 56px; }
-  .blog-post .meta { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); }
-  .blog-post h3.post-title { margin-top: 10px; font-size: 1.75rem; line-height: 1.25; color: var(--ink); }
-  .blog-post .excerpt { margin-top: 12px; font-size: 1.05rem; line-height: 1.6; color: var(--ink-soft); }
-  .blog-prose { margin-top: 32px; color: var(--ink-soft); font-size: 1rem; line-height: 1.8; }
-  .blog-prose h4 { margin-top: 2em; margin-bottom: 0.5em; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); }
-  .blog-prose p { margin-top: 1.1em; }
-  .blog-prose ul, .blog-prose ol { margin-top: 1.1em; padding-left: 1.4em; }
-  .blog-prose ul { list-style: disc; }
-  .blog-prose ol { list-style: decimal; }
-  .blog-prose li + li { margin-top: 0.4em; }
-  .blog-prose li::marker { color: var(--coral); }
-  .blog-prose strong { color: var(--ink); font-weight: 700; }
-  .blog-prose a { color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
-  .blog-post .faq-list { margin-top: 40px; }
-  .blog-post .back-link { display: inline-block; margin-top: 32px; font-size: 0.85rem; font-weight: 700; color: var(--teal-dark); }
-
-  /* ---------- FAQ ---------- */
-  .faq-list { margin-top: 56px; display: flex; flex-direction: column; gap: 12px; }
-  .faq-item { border-radius: 16px; border: 1px solid rgba(31,42,68,0.1); background: var(--cream); padding: 16px 24px; }
-  .faq-item[open] { box-shadow: 0 2px 8px -4px rgba(31,42,68,0.08); }
-  .faq-item summary {
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--ink);
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--coral); transition: transform 0.2s; }
-  .faq-item[open] summary svg { transform: rotate(45deg); }
-  .faq-item p { margin-top: 12px; font-size: 0.875rem; line-height: 1.6; color: var(--ink-soft); }
-
-  /* ---------- Partner / lead form ---------- */
-  .partner { position: relative; overflow: hidden; }
-  .partner-inner { position: relative; display: grid; gap: 48px; align-items: center; }
-  @media (min-width: 1024px) { .partner-inner { grid-template-columns: 1fr 1.1fr; } }
-  .partner-copy h2 { margin-top: 24px; font-size: 1.875rem; font-weight: 700; color: var(--ink); }
-  .partner-copy .lede { margin-top: 24px; max-width: 420px; }
-  .partner-list { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-  .partner-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; color: var(--ink); }
-  .partner-list svg { flex-shrink: 0; margin-top: 2px; width: 20px; height: 20px; color: var(--teal-dark); }
-
-  form.lead-form { border-radius: 24px; background: #fff; padding: 32px; box-shadow: 0 24px 48px -24px rgba(31,42,68,0.25); border: 1px solid rgba(31,42,68,0.05); }
-  .form-grid { display: grid; gap: 20px; }
-  @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
-  .field { display: flex; flex-direction: column; }
-  .field.full { grid-column: 1 / -1; }
-  .field label { font-size: 0.875rem; font-weight: 600; color: var(--ink); }
-  .field .req { color: var(--coral); }
-  .field input, .field select, .field textarea {
-    margin-top: 8px; width: 100%; border-radius: 12px; border: 1px solid rgba(31,42,68,0.1); background: var(--cream);
-    padding: 10px 16px; font-size: 0.875rem; color: var(--ink); font-family: inherit;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus {
-    outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,169,160,0.2);
-  }
-  .form-error { margin-top: 16px; border-radius: 12px; background: var(--coral-light); color: var(--coral-dark); padding: 12px 16px; font-size: 0.875rem; font-weight: 500; }
-  .form-submit {
-    margin-top: 24px; width: 100%; border-radius: 999px; border: none; background: var(--coral); color: var(--cream);
-    padding: 14px 28px; font-size: 1rem; font-weight: 600; box-shadow: 0 8px 20px -8px rgba(255,111,89,0.5);
-    transition: transform 0.15s, background 0.15s;
-  }
-  .form-submit:hover { transform: scale(1.01); background: var(--coral-dark); }
-  .form-note { margin-top: 16px; text-align: center; font-size: 0.75rem; color: var(--ink-soft); }
-
-  .success-card { border-radius: 24px; background: #fff; padding: 40px; text-align: center; box-shadow: 0 24px 48px -24px rgba(31,42,68,0.25); border: 1px solid rgba(31,42,68,0.05); }
-  .success-icon { margin: 0 auto; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 999px; background: var(--leaf-light); color: var(--leaf-dark); }
-  .success-icon svg { width: 28px; height: 28px; }
-  .success-card h3 { margin-top: 20px; font-size: 1.5rem; font-weight: 700; color: var(--ink); }
-  .success-card p { margin-top: 8px; color: var(--ink-soft); }
-  .success-actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-
-  /* ---------- Footer ---------- */
-  footer.site-footer { background: var(--ink); color: rgba(255,251,243,0.7); padding: 56px 0; }
-  .footer-grid { display: grid; gap: 40px; }
-  @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-  .footer-brand { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--cream); }
-  .footer-brand .brand-dot { background: var(--coral); }
-  .footer-about { margin-top: 16px; max-width: 320px; font-size: 0.875rem; line-height: 1.6; }
-  footer h3 { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cream); }
-  footer ul { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; }
-  footer a:hover { color: var(--coral); }
-  .footer-bottom { margin-top: 48px; display: flex; flex-direction: column; gap: 16px; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,251,243,0.1); padding-top: 24px; font-size: 0.75rem; }
-  @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
-
-  .offline-note {
-    background: var(--sun-light); color: var(--sun-dark); text-align: center; font-size: 0.8rem; font-weight: 600;
-    padding: 8px 16px;
-  }
-</style>
+<link rel="stylesheet" href="styles.css" />
 <script type="application/ld+json">
 [
   {
@@ -546,7 +138,7 @@
       <a href="#program-levels">Program Levels</a>
       <a href="#offerings">What We Offer</a>
       <a href="#testimonials">Testimonials</a>
-      <a href="#blog">Blog</a>
+      <a href="blog.html">Blog</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="#partner" class="btn-primary nav-cta">Partner Your School</a>
@@ -562,7 +154,7 @@
     <a href="#benefits">Benefits</a>
     <a href="#impact">Impact</a>
     <a href="#testimonials">Testimonials</a>
-    <a href="#blog">Blog</a>
+    <a href="blog.html">Blog</a>
     <a href="#faq">FAQ</a>
     <a href="#partner" class="btn-primary" style="text-align:center;">Partner Your School</a>
   </div>
@@ -604,14 +196,14 @@
   <section id="what-is-dot" class="section" style="background:#fff;">
     <div class="wrap">
       <div class="heading-center">
-        <span class="badge leaf">Aligned to NEP 2020 &amp; NCF</span>
-        <h2 class="section-title" style="margin-top:24px;">What is the DOT program?</h2>
+        <h2 class="section-title">What is the DOT program?</h2>
         <p class="section-sub">
           DOT stands for connecting the dots of early childhood. Instead of treating language,
           literacy, numeracy, feelings and creativity as separate subjects, DOT weaves 8 areas of
           learning into a single play-based classroom experience — so schools deliver whole-child
           development, not a checklist of activities.
         </p>
+        <span class="badge leaf" style="margin-top:32px;">Aligned to NEP 2020 &amp; NCF</span>
         <p class="areas-subhead">
           The DOT curriculum is designed in line with the National Education Policy (NEP) 2020 and
           the National Curriculum Framework for Foundational Stage (NCF), so schools get play-based,
@@ -759,233 +351,34 @@
           <h2 class="section-title">From the DOT blog</h2>
           <p class="lede" style="margin-top:20px;">Practical guidance on NEP 2020, early childhood development, and running a genuinely play-based pre-primary curriculum.</p>
         </div>
+        <a href="blog.html" class="btn-secondary">View all posts</a>
       </div>
 
       <div class="blog-grid">
-        <a class="blog-card" href="#post-nep-2020">
+        <a class="blog-card" href="blog/nep-2020-pre-primary-schools-guide.html">
           <span class="meta">12 January 2026 · 3 min read</span>
           <h3>NEP 2020 and Pre-Primary Schools: What It Actually Changes</h3>
           <p>NEP 2020 formally brought ages 3–8 into India's school system for the first time. Here's what that means for a pre-primary school's curriculum, staffing and daily routine.</p>
           <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
         </a>
-        <a class="blog-card" href="#post-8-areas">
+        <a class="blog-card" href="blog/8-areas-of-early-childhood-development.html">
           <span class="meta">19 January 2026 · 3 min read</span>
           <h3>8 Areas of Early Childhood Development Every Pre-Primary Program Should Cover</h3>
           <p>Most preschool curriculums focus heavily on early literacy and numeracy. Whole-child development means covering 8 areas together — here's what each one actually involves.</p>
           <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
         </a>
-        <a class="blog-card" href="#post-lkg-vs-ukg">
+        <a class="blog-card" href="blog/lkg-vs-ukg-developmental-differences.html">
           <span class="meta">26 January 2026 · 3 min read</span>
           <h3>LKG vs UKG: What Changes Developmentally Each Year</h3>
           <p>LKG and UKG are often treated as interchangeable "preschool years." Developmentally, they're not — here's what should actually change between them.</p>
           <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
         </a>
-        <a class="blog-card" href="#post-progress-tracking">
+        <a class="blog-card" href="blog/progress-tracking-early-years-learning-gaps.html">
           <span class="meta">2 February 2026 · 2 min read</span>
           <h3>How Progress Tracking Prevents Learning Gaps in Early Years</h3>
           <p>By the time a learning gap shows up in a term-end report, a child may have been struggling for months. Regular, structured tracking catches it far earlier.</p>
           <span class="read-link">Read the post <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10H4a1 1 0 010-2h9.6l-3.3-3.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></span>
         </a>
-      </div>
-
-      <div class="blog-post-list">
-
-        <article id="post-nep-2020" class="blog-post">
-          <span class="meta">12 January 2026 · 3 min read</span>
-          <h3 class="post-title">NEP 2020 and Pre-Primary Schools: What It Actually Changes</h3>
-          <p class="excerpt">A plain-language guide to what India's National Education Policy (NEP) 2020 means for pre-primary schools, and what an NEP-aligned curriculum needs to include.</p>
-          <div class="blog-prose">
-            <p>NEP 2020 — India's National Education Policy, released in 2020 — is the first national policy to formally bring children aged 3 to 8 into the school system as a single "Foundational Stage." For pre-primary schools, that's not a minor footnote: it changes what a curriculum for 3–6 year-olds is expected to look like, and who owns responsibility for getting it right.</p>
-            <p>This guide covers what actually changed, in plain language, without assuming you've read the full policy document.</p>
-            <h4>The 10+2 structure is gone</h4>
-            <p>For decades, Indian schooling was described as 10+2: ten years of school followed by two years of senior secondary. NEP 2020 replaces that with a 5+3+3+4 structure:</p>
-            <ul>
-              <li><strong>Foundational Stage (5 years):</strong> 3 years of pre-primary/preschool + Grades 1–2</li>
-              <li><strong>Preparatory Stage (3 years):</strong> Grades 3–5</li>
-              <li><strong>Middle Stage (3 years):</strong> Grades 6–8</li>
-              <li><strong>Secondary Stage (4 years):</strong> Grades 9–12</li>
-            </ul>
-            <p>The key shift for pre-primary schools is the first bracket. Ages 3–6, which used to sit outside the formal school system in most policy conversations, are now explicitly Year 1–3 of a child's schooling — grouped together with Grades 1 and 2, not treated as a separate "before school" phase.</p>
-            <h4>What NEP 2020 expects from the Foundational Stage</h4>
-            <p>NEP 2020 and the related National Curriculum Framework for Foundational Stage (NCF) are specific about <em>how</em> these years should be taught, not just that they should exist. The broad expectations are:</p>
-            <ul>
-              <li><strong>Play-based and activity-based learning</strong>, not textbook-driven instruction</li>
-              <li><strong>Multiple areas of development</strong> addressed together — language, cognitive, motor, social-emotional, and creative — rather than literacy and numeracy in isolation</li>
-              <li><strong>Formal reading and writing introduced gradually</strong>, generally not before age 5–6</li>
-              <li><strong>Trained educators</strong> for early years, recognizing that teaching 3–6 year-olds is a distinct skill from teaching older grades</li>
-            </ul>
-            <p>For a pre-primary school, this means a curriculum built around worksheets and rote memorization doesn't just feel outdated — it's misaligned with the stated national framework your school may eventually be evaluated against.</p>
-            <h4>What this means for your curriculum, in practice</h4>
-            <p>If you're evaluating (or building) a pre-primary curriculum with NEP 2020 in mind, three things matter most:</p>
-            <ol>
-              <li><strong>Coverage across multiple developmental areas</strong>, not just early literacy and numeracy. A curriculum organized around a handful of narrow subjects won't reflect the whole-child approach NEP calls for.</li>
-              <li><strong>A play-based delivery model</strong> — daily activities, not worksheets, as the primary teaching method.</li>
-              <li><strong>Structured teacher training</strong>, since NEP's expectations only translate into classroom practice if educators are trained to deliver play-based learning, not simply handed a textbook.</li>
-            </ol>
-            <p>DOT's curriculum was built around these three points directly — it covers <a href="#what-is-dot">8 areas of learning</a> delivered through play-based, day-to-day classroom activities, mapped across four <a href="#program-levels">program levels</a> from LKG through Std 2, with teacher certification built in rather than assumed.</p>
-            <h4>The bottom line</h4>
-            <p>NEP 2020 doesn't just add new terminology to early childhood education — it puts pre-primary schooling on the same policy footing as the rest of the school system, with specific expectations about how those years should be taught. Schools that treat pre-primary as a lighter, less structured stage are increasingly out of step with where the policy — and parent expectations — are heading.</p>
-            <p>If you're reviewing your school's current pre-primary approach against NEP 2020, <a href="#offerings">see how DOT's curriculum is structured</a> or <a href="#partner">get in touch to talk it through</a>.</p>
-          </div>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>Does NEP 2020 apply to pre-primary schools?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>Yes. NEP 2020 is the first Indian education policy to formally bring ages 3–8 into the school system as the "Foundational Stage," covering 3 years of pre-primary (anganwadi/preschool) plus Grades 1–2.</p>
-            </details>
-            <details class="faq-item">
-              <summary>What is the 5+3+3+4 structure in NEP 2020?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>It replaces the older 10+2 structure. The first "5" is the Foundational Stage (3 years pre-primary + Grades 1–2), followed by 3 years Preparatory (Grades 3–5), 3 years Middle (Grades 6–8), and 4 years Secondary (Grades 9–12).</p>
-            </details>
-            <details class="faq-item">
-              <summary>Is a play-based curriculum required under NEP 2020?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>NEP 2020 and the NCF for Foundational Stage both call for play-based, activity-based learning rather than formal, textbook-driven instruction in the Foundational Stage, with formal literacy and numeracy introduced gradually from around Grade 1.</p>
-            </details>
-          </div>
-          <a class="back-link" href="#blog">← Back to all posts</a>
-        </article>
-
-        <article id="post-8-areas" class="blog-post">
-          <span class="meta">19 January 2026 · 3 min read</span>
-          <h3 class="post-title">8 Areas of Early Childhood Development Every Pre-Primary Program Should Cover</h3>
-          <p class="excerpt">A breakdown of the 8 areas of development a whole-child pre-primary curriculum should address — language, literacy, numeracy, social-emotional skills and more.</p>
-          <div class="blog-prose">
-            <p>Ask most parents what their child "learns" in preschool, and the answer is usually letters, numbers, and maybe some colors. That's not wrong — but it's a narrow slice of what a well-designed pre-primary curriculum should actually cover.</p>
-            <p>Early childhood research is fairly consistent on this point: a 3–6 year-old's development isn't a set of separate subjects. Language, motor skills, emotional regulation, and cognitive growth develop together, and a curriculum that only targets early literacy and numeracy is leaving real developmental ground uncovered.</p>
-            <p>Here are the 8 areas a genuinely whole-child pre-primary program should address.</p>
-            <h4>1. Language and Communication</h4>
-            <p>Vocabulary, listening skills, and the confidence to express a thought out loud. This is built less through direct instruction and more through conversation, storytelling, and dramatic play — a child narrating their own pretend-play scenario is doing real language development work.</p>
-            <h4>2. Literacy and Phonics</h4>
-            <p>Sound awareness, letter recognition, and the early building blocks of reading and writing. Critically, this should be sequenced <em>after</em> strong language foundations, not instead of them — phonics taught in isolation, without the vocabulary and listening skills to support it, tends not to stick.</p>
-            <h4>3. Numeracy and Maths</h4>
-            <p>Number sense, counting, pattern recognition and early problem-solving — introduced through hands-on, playful exploration (sorting objects, comparing sizes, simple games) rather than worksheets and rote counting.</p>
-            <h4>4. Me and My World</h4>
-            <p>Awareness of self, family, community and environment. This is where a child starts to make sense of who they are and how they relate to the people and world around them — often overlooked, but foundational to everything else on this list.</p>
-            <h4>5. Social and Emotional Learning</h4>
-            <p>Empathy, self-regulation, sharing, and friendship skills, usually built through circle time, guided group play, and adults modeling how to name and work through feelings. This area matters more than it's often given credit for: a child who can't yet self-regulate will struggle to focus on literacy or numeracy activities, regardless of how well those are taught.</p>
-            <h4>6. Art and Creative Expression</h4>
-            <p>Open-ended art, music, and imaginative play, where the process matters more than the output. This is one of the few areas where there's no "correct" answer — and that's the point.</p>
-            <h4>7. Movement and Coordination</h4>
-            <p>Fine motor skills (holding a crayon, using scissors) and gross motor skills (running, balancing, climbing), built through daily movement, games, and structured physical play. Fine motor development in particular is a direct prerequisite for handwriting later on.</p>
-            <h4>8. Health and Safety</h4>
-            <p>Everyday habits and awareness — hygiene, nutrition, and personal safety — built into classroom routines rather than taught as a one-off lesson.</p>
-            <h4>Why cover all 8 together, not separately</h4>
-            <p>The case for whole-child development isn't just philosophical. These areas reinforce each other in practice: a child with stronger social-emotional regulation engages better with literacy activities; a child with stronger fine motor skills has an easier time with early writing; a child with a richer vocabulary picks up phonics faster. Treating these as eight disconnected subjects misses how a 3–6 year-old actually develops.</p>
-            <p>This is the structure DOT's curriculum is built around — all <a href="#what-is-dot">8 areas of learning</a> woven into a single play-based classroom experience, rather than delivered as separate subjects. <a href="#program-levels">See how it's sequenced across program levels</a>, or <a href="#partner">talk to us about bringing it to your school</a>.</p>
-          </div>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>What are the main areas of early childhood development?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>A whole-child early years curriculum typically covers language and communication, literacy and phonics, numeracy and maths, awareness of self and community, social and emotional learning, art and creative expression, movement and coordination, and health and safety.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Why shouldn't a preschool curriculum focus only on literacy and numeracy?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>Early childhood research consistently shows that language, motor, social-emotional and creative development are interdependent — a child's social-emotional regulation, for example, directly affects their ability to focus and learn early literacy and numeracy skills.</p>
-            </details>
-            <details class="faq-item">
-              <summary>How is social-emotional learning taught in pre-primary?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>Typically through structured routines like circle time, guided group play, and adult-modeled conflict resolution, rather than as a standalone lesson — it's built into how the classroom day runs, not a separate subject.</p>
-            </details>
-          </div>
-          <a class="back-link" href="#blog">← Back to all posts</a>
-        </article>
-
-        <article id="post-lkg-vs-ukg" class="blog-post">
-          <span class="meta">26 January 2026 · 3 min read</span>
-          <h3 class="post-title">LKG vs UKG: What Changes Developmentally Each Year</h3>
-          <p class="excerpt">What actually differs between LKG and UKG beyond the label — developmental expectations, curriculum focus, and what should carry over into Std 1.</p>
-          <div class="blog-prose">
-            <p>LKG and UKG are sometimes talked about as if they're the same year repeated twice — "preschool," broadly. Developmentally, that's a mistake. A 3-year-old and a 4-year-old are working with meaningfully different capabilities, and a curriculum that doesn't reflect that is either too advanced for LKG or not enough for UKG.</p>
-            <p>Here's what should actually differ between the two years.</p>
-            <h4>LKG (Little Dot): first steps into structured learning</h4>
-            <p>LKG is typically a child's first sustained experience with a structured classroom — sitting in a group, following simple routines, and separating from a parent or caregiver for part of the day. At this stage (roughly ages 3–4), the priority isn't academic content. It's:</p>
-            <ul>
-              <li>Building comfort with classroom routines and group settings</li>
-              <li>Early language development through conversation, songs, and stories</li>
-              <li>Fine and gross motor development through play</li>
-              <li>First exposure to numbers, letters, and shapes — through play, not instruction</li>
-            </ul>
-            <p>Pushing formal literacy or numeracy instruction too early in LKG tends to backfire. At this age, a child's attention span and fine motor control usually aren't ready for sustained writing practice, and forcing it can create early negative associations with "schoolwork" that are hard to undo.</p>
-            <h4>UKG (Big Dot): deeper exploration, still play-based</h4>
-            <p>By UKG (roughly ages 4–5), children have more classroom experience and stronger attention spans. This is where the curriculum should get more deliberate — not more formal, but more structured — across all areas of learning:</p>
-            <ul>
-              <li>More structured phonics and pre-reading activities, building on LKG's language foundation</li>
-              <li>Number sense and early pattern recognition, moving beyond simple counting</li>
-              <li>Longer, more complex group activities and cooperative play</li>
-              <li>Growing independence in routines (managing their own materials, following multi-step instructions)</li>
-            </ul>
-            <p>The mistake schools make here often isn't adding more structure — it's swapping play-based delivery for worksheets in the name of "getting ready for Std 1." NEP 2020 and the NCF for Foundational Stage are explicit that UKG should still be play-based; what changes is the depth and complexity of what's being explored, not the format.</p>
-            <h4>What should carry into Std 1</h4>
-            <p>Under NEP 2020's 5+3+3+4 structure, Std 1 is still part of the same Foundational Stage as LKG and UKG — not a separate, more "serious" phase. The habits and skills built in UKG should carry forward directly:</p>
-            <ul>
-              <li>Sound awareness and early reading skills built on in UKG should extend into formal literacy in Std 1</li>
-              <li>Number sense should extend into structured early maths</li>
-              <li>Fine motor control built through UKG activities should support the transition into regular handwriting</li>
-              <li>Classroom routines and independence should make the shift into Std 1 feel like a continuation, not a reset</li>
-            </ul>
-            <p>A curriculum that treats LKG, UKG and Std 1 as one continuous developmental arc — rather than three disconnected years — makes that transition far smoother for both children and teachers.</p>
-            <p>This is exactly how DOT sequences its curriculum: <a href="#program-levels">Little Dot (LKG) and Big Dot (UKG)</a> build directly into Tiny Dot (Std 1), with the same 8 areas of learning deepening year over year rather than resetting. <a href="#program-levels">See the full program level breakdown</a>.</p>
-          </div>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>What is the age difference between LKG and UKG?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>LKG (Lower Kindergarten) is typically for children aged 3–4, and UKG (Upper Kindergarten) for children aged 4–5, though exact cutoffs vary by school and region.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Is UKG more academic than LKG?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>UKG should build on LKG with more structured exploration across all areas of learning and a stronger foundation for formal literacy and numeracy, but it should still be delivered through play-based activities, not worksheets or rote drilling, per NEP 2020 and NCF guidance.</p>
-            </details>
-            <details class="faq-item">
-              <summary>What should carry over from UKG into Std 1?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>The habits and foundational skills built in UKG — sound awareness, number sense, fine motor control, and classroom routines — should carry forward directly into Std 1, which under NEP 2020 is still part of the same Foundational Stage, not a separate academic phase.</p>
-            </details>
-          </div>
-          <a class="back-link" href="#blog">← Back to all posts</a>
-        </article>
-
-        <article id="post-progress-tracking" class="blog-post" style="border-bottom:none;">
-          <span class="meta">2 February 2026 · 2 min read</span>
-          <h3 class="post-title">How Progress Tracking Prevents Learning Gaps in Early Years</h3>
-          <p class="excerpt">Why regular, structured progress tracking in pre-primary classrooms catches developmental gaps early — and what a good early years tracking system should actually measure.</p>
-          <div class="blog-prose">
-            <p>Most pre-primary schools assess progress at fixed points — a mid-term check-in, a term-end report. That cadence works reasonably well for catching gaps that are already obvious. It's much less effective at catching the ones that aren't yet.</p>
-            <p>By the time a developmental gap is visible enough to show up in a term-end report, a child may have been quietly struggling with it for weeks or months — and because early years skills build on each other, an unaddressed gap in one area (fine motor control, social-emotional regulation, phonics awareness) tends to compound into others.</p>
-            <h4>What "progress tracking" should actually mean in pre-primary</h4>
-            <p>For younger children, this isn't the same as testing. Meaningful progress tracking in early years looks more like:</p>
-            <ul>
-              <li><strong>Regular observation, not periodic testing.</strong> A teacher logging what they see during normal classroom activities, on an ongoing basis, rather than administering a formal assessment every few months.</li>
-              <li><strong>Coverage across all areas of development</strong>, not just early literacy and numeracy. A tracker that only measures reading and counting misses the social-emotional and motor gaps that often show up first.</li>
-              <li><strong>Visible to more than just the teacher.</strong> Parents and school leadership should be able to see the same picture the teacher sees, not just a summary at term-end.</li>
-            </ul>
-            <h4>Why this catches gaps earlier</h4>
-            <p>The core advantage of regular tracking over periodic assessment is simple: shorter feedback loops. If a teacher is logging observations regularly across all developmental areas, a gap becomes visible within days or weeks of it starting to emerge — not months later, once it's compounded into something bigger.</p>
-            <p>This matters more in early years than in any later stage of school. A 4-year-old who's quietly behind on fine motor development, for example, isn't just behind on "art" — that gap will show up again in handwriting readiness for Std 1 if it isn't caught and supported early.</p>
-            <h4>What happens after a gap is identified</h4>
-            <p>Tracking on its own doesn't help unless it leads to action. A useful early years tracking system should make it easy for a teacher to:</p>
-            <ol>
-              <li>See exactly where a specific child is progressing well and where they're not, across all areas — not just an overall score</li>
-              <li>Get that signal early enough to intervene with simple, targeted support (not a formal remediation program — usually just more focused attention in that specific area)</li>
-              <li>Keep parents in the loop with the same information, so home and classroom support are aligned</li>
-            </ol>
-            <h4>Built into DOT, not bolted on afterward</h4>
-            <p>This is the model behind <a href="#progress-tracking">DOT's built-in progress tracking system</a> — every child is tracked regularly against developmental skills and all 8 areas of learning, with the explicit goal of catching gaps early enough that a teacher can step in before they compound. <a href="#progress-tracking">See how the tracking system works</a>, or <a href="#partner">talk to us about bringing it to your school</a>.</p>
-          </div>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>Why is early progress tracking important in preschool?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>Because early childhood development moves quickly and unevenly — a gap in one area (like fine motor skills or social-emotional regulation) can affect a child's progress in others, and the earlier it's identified, the easier it is to address with simple, targeted support.</p>
-            </details>
-            <details class="faq-item">
-              <summary>What should a preschool progress tracker actually measure?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>A good tracker should cover developmental skills and all areas of learning together — not just early literacy and numeracy — logged regularly by the teacher rather than assessed only at term-end.</p>
-            </details>
-            <details class="faq-item">
-              <summary>How often should a child's progress be tracked in pre-primary?<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"/></svg></summary>
-              <p>Regularly — ideally as part of routine classroom observation rather than a periodic formal test, so gaps are visible as they emerge rather than discovered only at a term-end review.</p>
-            </details>
-          </div>
-          <a class="back-link" href="#blog">← Back to all posts</a>
-        </article>
-
       </div>
     </div>
   </section>
@@ -1133,7 +526,7 @@
           <li><a href="#benefits">Benefits</a></li>
           <li><a href="#impact">Impact</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#partner">Partner Your School</a></li>
         </ul>

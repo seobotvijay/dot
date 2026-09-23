@@ -27,10 +27,7 @@ export default function WhatIsDot() {
     <section id="what-is-dot" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-leaf-light px-4 py-1.5 text-sm font-semibold text-leaf-dark">
-            {nepAlignment.badge}
-          </span>
-          <h2 className="section-heading-underline mt-6 font-display text-3xl font-bold text-ink sm:text-4xl">
+          <h2 className="section-heading-underline font-display text-3xl font-bold text-ink sm:text-4xl">
             What is the DOT program?
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-ink-soft">
@@ -39,6 +36,9 @@ export default function WhatIsDot() {
             DOT weaves 8 areas of learning into a single play-based classroom experience —
             so schools deliver whole-child development, not a checklist of activities.
           </p>
+          <span className="mt-8 inline-flex items-center gap-2 rounded-full bg-leaf-light px-4 py-1.5 text-sm font-semibold text-leaf-dark">
+            {nepAlignment.badge}
+          </span>
           <p className="mt-4 text-sm leading-relaxed text-ink-soft">
             {nepAlignment.description}
           </p>
