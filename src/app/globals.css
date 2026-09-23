@@ -126,3 +126,89 @@ body {
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
 }
+
+.prose-blog {
+  color: var(--color-brand-ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.prose-blog h2 {
+  margin-top: 2.25em;
+  margin-bottom: 0.6em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-brand-ink);
+}
+
+.prose-blog h3 {
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-brand-ink);
+}
+
+.prose-blog p {
+  margin-top: 1.1em;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin-top: 1.1em;
+  padding-left: 1.4em;
+}
+
+.prose-blog ul {
+  list-style: disc;
+}
+
+.prose-blog ol {
+  list-style: decimal;
+}
+
+.prose-blog li + li {
+  margin-top: 0.4em;
+}
+
+.prose-blog li::marker {
+  color: var(--color-brand-coral);
+}
+
+.prose-blog strong {
+  color: var(--color-brand-ink);
+  font-weight: 700;
+}
+
+.prose-blog a {
+  color: var(--color-brand-teal-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-blog a:hover {
+  color: var(--color-brand-coral-dark);
+}
+
+.prose-blog table {
+  margin-top: 1.5em;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.prose-blog th,
+.prose-blog td {
+  border: 1px solid rgba(31, 42, 68, 0.1);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.prose-blog th {
+  background: var(--color-brand-cream);
+  font-family: var(--font-display);
+  color: var(--color-brand-ink);
+}

@@ -1,13 +1,16 @@
+import Link from "next/link";
+
 const quickLinks = [
-  { href: "#what-is-dot", label: "What is DOT" },
-  { href: "#program-levels", label: "Program Levels" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#offerings", label: "What We Offer" },
-  { href: "#benefits", label: "Benefits" },
-  { href: "#impact", label: "Impact" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#partner", label: "Partner Your School" },
+  { href: "/#what-is-dot", label: "What is DOT" },
+  { href: "/#program-levels", label: "Program Levels" },
+  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/#offerings", label: "What We Offer" },
+  { href: "/#benefits", label: "Benefits" },
+  { href: "/#impact", label: "Impact" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#partner", label: "Partner Your School" },
 ];
 
 export default function Footer() {
@@ -16,12 +19,12 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <a href="#top" className="flex items-center gap-2 font-display text-xl font-bold text-cream">
+            <Link href="/#top" className="flex items-center gap-2 font-display text-xl font-bold text-cream">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral">
                 <span className="h-2.5 w-2.5 rounded-full bg-cream" />
               </span>
               dot<span className="text-coral">.</span> learning circle
-            </a>
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               A play-based early years program that helps pre-primary schools connect
               curriculum, teachers and parents into one whole-child journey.
@@ -35,9 +38,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition-colors hover:text-coral">
+                  <Link href={link.href} className="transition-colors hover:text-coral">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -54,9 +57,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#partner" className="transition-colors hover:text-coral">
+                <Link href="/#partner" className="transition-colors hover:text-coral">
                   Request a partnership call
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

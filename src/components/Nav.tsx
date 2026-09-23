@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const links = [
-  { href: "#what-is-dot", label: "What is DOT" },
-  { href: "#program-levels", label: "Program Levels" },
-  { href: "#offerings", label: "What We Offer" },
-  { href: "#benefits", label: "Benefits" },
-  { href: "#impact", label: "Impact" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#what-is-dot", label: "What is DOT" },
+  { href: "/#program-levels", label: "Program Levels" },
+  { href: "/#offerings", label: "What We Offer" },
+  { href: "/#benefits", label: "Benefits" },
+  { href: "/#impact", label: "Impact" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Nav() {
@@ -18,31 +20,31 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-2 font-display text-xl font-bold text-ink">
+        <Link href="/#top" className="flex items-center gap-2 font-display text-xl font-bold text-ink">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-cream">
             <span className="h-2.5 w-2.5 rounded-full bg-cream" />
           </span>
           dot<span className="text-coral">.</span> learning circle
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-ink-soft transition-colors hover:text-coral"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href="#partner"
+        <Link
+          href="/#partner"
           className="hidden rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-cream shadow-sm transition-transform hover:scale-105 hover:bg-coral-dark md:inline-block"
         >
           Partner Your School
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -64,22 +66,22 @@ export default function Nav() {
         <div className="border-t border-ink/5 bg-cream px-6 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-ink-soft"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#partner"
+            <Link
+              href="/#partner"
               className="rounded-full bg-coral px-5 py-2.5 text-center text-sm font-semibold text-cream"
               onClick={() => setOpen(false)}
             >
               Partner Your School
-            </a>
+            </Link>
           </nav>
         </div>
       )}
