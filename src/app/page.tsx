@@ -7,6 +7,7 @@ import ProgressTracking from "@/components/ProgressTracking";
 import Benefits from "@/components/Benefits";
 import Insights from "@/components/Insights";
 import Testimonials from "@/components/Testimonials";
+import LatestBlog from "@/components/LatestBlog";
 import Faq from "@/components/Faq";
 import PartnerSection from "@/components/PartnerSection";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Benefits />
       <Insights />
       <Testimonials />
+      <LatestBlog />
       <Faq />
       <PartnerSection />
     </>
