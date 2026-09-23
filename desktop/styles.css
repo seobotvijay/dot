@@ -79,7 +79,7 @@
   }
   .brand-dot span { width: 10px; height: 10px; border-radius: 999px; background: var(--cream); }
   .brand .accent { color: var(--coral); }
-  nav.links { display: none; gap: 24px; align-items: center; flex-shrink: 0; }
+  nav.links { display: none; gap: 18px; align-items: center; flex-shrink: 0; }
   nav.links a { font-size: 0.88rem; font-weight: 500; color: var(--ink-soft); transition: color 0.15s; white-space: nowrap; }
   nav.links a:hover { color: var(--coral); }
   .btn-primary {
@@ -93,7 +93,7 @@
     padding: 12px 24px; font-size: 0.95rem; font-weight: 600; background: transparent; transition: border-color 0.15s, color 0.15s;
   }
   .btn-secondary:hover { border-color: var(--teal); color: var(--teal-dark); }
-  .nav-cta { display: none; flex-shrink: 0; white-space: nowrap; }
+  .nav-cta { display: none; flex-shrink: 0; white-space: nowrap; padding: 10px 20px; font-size: 0.85rem; }
   .nav-toggle {
     display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center;
     width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(31,42,68,0.1); background: none; flex-shrink: 0;

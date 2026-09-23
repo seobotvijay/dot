@@ -8,6 +8,7 @@ const links = [
   { href: "/#why-dot", label: "Why DOT?" },
   { href: "/#what-is-dot", label: "What is DOT" },
   { href: "/#program-levels", label: "Program Levels" },
+  { href: "/#how-it-works", label: "How DOT Works" },
   { href: "/#offerings", label: "What We Offer" },
   { href: "/#benefits", label: "Benefits" },
   { href: "/#impact", label: "Impact" },

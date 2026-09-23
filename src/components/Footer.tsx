@@ -4,7 +4,7 @@ const quickLinks = [
   { href: "/#why-dot", label: "Why DOT?" },
   { href: "/#what-is-dot", label: "What is DOT" },
   { href: "/#program-levels", label: "Program Levels" },
-  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/#how-it-works", label: "How DOT Works" },
   { href: "/#offerings", label: "What We Offer" },
   { href: "/#materials", label: "Materials Included" },
   { href: "/#benefits", label: "Benefits" },
