@@ -72,10 +72,46 @@ export const nepAlignment = {
     "The DOT curriculum is designed in line with the National Education Policy (NEP) 2020 and the National Curriculum Framework for Foundational Stage (NCF), so schools get play-based, whole-child learning that also maps cleanly to national early-years guidelines.",
 };
 
+export type WhyDotPoint = {
+  title: string;
+  description: string;
+  color: BrandColor;
+};
+
+export const whyDot = {
+  intro:
+    "Because early years deserve more than a textbook and a hope. DOT brings curriculum, materials, training, parent engagement and progress tracking together in one program — so schools don't have to piece it together from separate vendors.",
+  points: [
+    {
+      title: "One program, not five vendors",
+      description:
+        "Curriculum, hands-on materials, teacher training, parent engagement and progress tracking — bundled together, not sourced separately.",
+      color: "coral",
+    },
+    {
+      title: "Whole-child, not just ABCs and 123s",
+      description:
+        "8 areas of learning developed together, not early literacy and numeracy taught in isolation.",
+      color: "teal",
+    },
+    {
+      title: "NEP 2020 & NCF-aligned",
+      description:
+        "Built to match India's national early-years framework from day one, not retrofitted later.",
+      color: "sun",
+    },
+    {
+      title: "No child falls behind",
+      description:
+        "Built-in progress tracking catches developmental gaps early, so teachers can step in before they compound.",
+      color: "lavender",
+    },
+  ] as WhyDotPoint[],
+};
+
 export type ProgramLevel = {
   grade: string;
   dotName: string;
-  ageRange: string;
   description: string;
   color: BrandColor;
 };
@@ -84,28 +120,24 @@ export const programLevels: ProgramLevel[] = [
   {
     grade: "LKG",
     dotName: "Little Dot",
-    ageRange: "Ages 3–4",
     description: "First steps into structured play-based learning — building comfort, curiosity and classroom routines.",
     color: "coral",
   },
   {
     grade: "UKG",
     dotName: "Big Dot",
-    ageRange: "Ages 4–5",
     description: "Deeper exploration across all 8 areas of learning, building the foundation for formal literacy and numeracy.",
     color: "teal",
   },
   {
     grade: "Std 1",
     dotName: "Tiny Dot",
-    ageRange: "Ages 5–6",
     description: "A gentle bridge into primary school — strengthening reading, writing and number skills through continued play.",
     color: "sun",
   },
   {
     grade: "Std 2",
     dotName: "Mighty Dot",
-    ageRange: "Ages 6–7",
     description: "Building independence and confidence as children apply foundational skills to more complex, guided tasks.",
     color: "lavender",
   },

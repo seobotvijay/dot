@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 
+// Full set, used in the mobile menu where vertical space isn't constrained.
 const links = [
+  { href: "/#why-dot", label: "Why DOT?" },
   { href: "/#what-is-dot", label: "What is DOT" },
   { href: "/#program-levels", label: "Program Levels" },
   { href: "/#offerings", label: "What We Offer" },
@@ -14,25 +16,31 @@ const links = [
   { href: "/blog", label: "Blog" },
 ];
 
+// Trimmed set for the desktop nav bar — Program Levels, Benefits and Impact
+// stay reachable via the mobile menu and footer instead of crowding one row.
+const primaryLinks = links.filter(
+  (link) => !["/#program-levels", "/#benefits", "/#impact"].includes(link.href)
+);
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/#top" className="flex items-center gap-2 font-display text-xl font-bold text-ink">
+        <Link href="/#top" className="flex shrink-0 items-center gap-2 font-display text-xl font-bold text-ink">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-cream">
             <span className="h-2.5 w-2.5 rounded-full bg-cream" />
           </span>
           dot<span className="text-coral">.</span> learning circle
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
-          {links.map((link) => (
+        <nav className="hidden items-center gap-6 md:flex">
+          {primaryLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-soft transition-colors hover:text-coral"
+              className="whitespace-nowrap text-sm font-medium text-ink-soft transition-colors hover:text-coral"
             >
               {link.label}
             </Link>
@@ -41,7 +49,7 @@ export default function Nav() {
 
         <Link
           href="/#partner"
-          className="hidden rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-cream shadow-sm transition-transform hover:scale-105 hover:bg-coral-dark md:inline-block"
+          className="hidden shrink-0 whitespace-nowrap rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-cream shadow-sm transition-transform hover:scale-105 hover:bg-coral-dark md:inline-block"
         >
           Partner Your School
         </Link>

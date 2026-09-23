@@ -39,7 +39,6 @@ export default function ProgramLevels() {
                     {level.grade}
                   </span>
                   <h3 className="mt-3 font-display text-lg font-bold text-ink">{level.dotName}</h3>
-                  <p className="mt-1 text-xs font-semibold text-ink-soft">{level.ageRange}</p>
                   <p className="mt-3 max-w-[220px] text-sm leading-relaxed text-ink-soft">
                     {level.description}
                   </p>

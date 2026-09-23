@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import WhyDot from "@/components/WhyDot";
 import WhatIsDot from "@/components/WhatIsDot";
 import ProgramLevels from "@/components/ProgramLevels";
 import HowAndWhy from "@/components/HowAndWhy";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WhyDot />
       <WhatIsDot />
       <ProgramLevels />
       <HowAndWhy />

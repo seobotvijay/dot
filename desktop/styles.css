@@ -162,6 +162,21 @@
   .section-sub { margin-top: 32px; font-size: 1.1rem; line-height: 1.7; color: var(--ink-soft); }
   @media (min-width: 640px) { .section-title { font-size: 2.25rem; } }
 
+  /* ---------- Why DOT ---------- */
+  .why-dot-grid { margin-top: 64px; display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1024px) { .why-dot-grid { grid-template-columns: repeat(4, 1fr); } }
+  .why-dot-card {
+    border-radius: 16px; border: 1px solid rgba(31,42,68,0.05); background: var(--cream);
+    padding: 24px; transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .why-dot-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -16px rgba(31,42,68,0.2); }
+  .why-dot-num {
+    display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+  }
+  .why-dot-card h3 { margin-top: 16px; font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+  .why-dot-card p { margin-top: 12px; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
+
   /* ---------- What is DOT / 8 Areas ---------- */
   .areas-subhead { margin-top: 20px; font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft); }
   .areas-label { margin: 64px 0 0; text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--ink); }
@@ -194,7 +209,6 @@
   .level-grade { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 12px; font-size: 0.72rem; font-weight: 700; }
   .level-grade .dot { width: 6px; height: 6px; border-radius: 999px; }
   .level-item h3 { margin-top: 12px; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
-  .level-item .age { margin-top: 2px; font-size: 0.72rem; font-weight: 600; color: var(--ink-soft); }
   .level-item p.desc { margin-top: 12px; max-width: 220px; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); }
 
   /* ---------- How & Why ---------- */

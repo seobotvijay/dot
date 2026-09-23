@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const quickLinks = [
+  { href: "/#why-dot", label: "Why DOT?" },
   { href: "/#what-is-dot", label: "What is DOT" },
   { href: "/#program-levels", label: "Program Levels" },
   { href: "/#how-it-works", label: "How It Works" },

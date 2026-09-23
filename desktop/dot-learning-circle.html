@@ -145,8 +145,8 @@
       dot<span class="accent">.</span> learning circle
     </a>
     <nav class="links">
+      <a href="#why-dot">Why DOT?</a>
       <a href="#what-is-dot">What is DOT</a>
-      <a href="#program-levels">Program Levels</a>
       <a href="#offerings">What We Offer</a>
       <a href="#testimonials">Testimonials</a>
       <a href="blog.html">Blog</a>
@@ -158,6 +158,7 @@
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#why-dot">Why DOT?</a>
     <a href="#what-is-dot">What is DOT</a>
     <a href="#program-levels">Program Levels</a>
     <a href="#how-it-works">How It Works</a>
@@ -198,6 +199,38 @@
           <span class="float-dot" style="left:40px; bottom:32px; background:var(--sun); animation-delay:2s;"></span>
           <span class="float-dot" style="right:32px; bottom:16px; background:var(--lavender); animation-delay:1.5s;"></span>
           <span class="float-dot" style="left:50%; top:8px; transform:translateX(-50%); background:var(--leaf); animation-delay:0.5s;"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Why DOT ---------- -->
+  <section id="why-dot" class="section" style="background:#fff;">
+    <div class="wrap">
+      <div class="heading-center">
+        <h2 class="section-title">Why DOT?</h2>
+        <p class="section-sub">Because early years deserve more than a textbook and a hope. DOT brings curriculum, materials, training, parent engagement and progress tracking together in one program — so schools don't have to piece it together from separate vendors.</p>
+      </div>
+      <div class="why-dot-grid">
+        <div class="why-dot-card">
+          <div class="why-dot-num" style="background:var(--coral-light);color:var(--coral-dark);">1</div>
+          <h3>One program, not five vendors</h3>
+          <p>Curriculum, hands-on materials, teacher training, parent engagement and progress tracking — bundled together, not sourced separately.</p>
+        </div>
+        <div class="why-dot-card">
+          <div class="why-dot-num" style="background:var(--teal-light);color:var(--teal-dark);">2</div>
+          <h3>Whole-child, not just ABCs and 123s</h3>
+          <p>8 areas of learning developed together, not early literacy and numeracy taught in isolation.</p>
+        </div>
+        <div class="why-dot-card">
+          <div class="why-dot-num" style="background:var(--sun-light);color:var(--sun-dark);">3</div>
+          <h3>NEP 2020 &amp; NCF-aligned</h3>
+          <p>Built to match India's national early-years framework from day one, not retrofitted later.</p>
+        </div>
+        <div class="why-dot-card">
+          <div class="why-dot-num" style="background:var(--lavender-light);color:var(--lavender-dark);">4</div>
+          <h3>No child falls behind</h3>
+          <p>Built-in progress tracking catches developmental gaps early, so teachers can step in before they compound.</p>
         </div>
       </div>
     </div>
@@ -533,6 +566,7 @@
       <div>
         <h3>Quick links</h3>
         <ul>
+          <li><a href="#why-dot">Why DOT?</a></li>
           <li><a href="#what-is-dot">What is DOT</a></li>
           <li><a href="#program-levels">Program Levels</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
@@ -578,10 +612,10 @@
   ];
 
   var programLevels = [
-    { grade: "LKG", dotName: "Little Dot", ageRange: "Ages 3–4", color: "coral", desc: "First steps into structured play-based learning — building comfort, curiosity and classroom routines." },
-    { grade: "UKG", dotName: "Big Dot", ageRange: "Ages 4–5", color: "teal", desc: "Deeper exploration across all 8 areas of learning, building the foundation for formal literacy and numeracy." },
-    { grade: "Std 1", dotName: "Tiny Dot", ageRange: "Ages 5–6", color: "sun", desc: "A gentle bridge into primary school — strengthening reading, writing and number skills through continued play." },
-    { grade: "Std 2", dotName: "Mighty Dot", ageRange: "Ages 6–7", color: "lavender", desc: "Building independence and confidence as children apply foundational skills to more complex, guided tasks." }
+    { grade: "LKG", dotName: "Little Dot", color: "coral", desc: "First steps into structured play-based learning — building comfort, curiosity and classroom routines." },
+    { grade: "UKG", dotName: "Big Dot", color: "teal", desc: "Deeper exploration across all 8 areas of learning, building the foundation for formal literacy and numeracy." },
+    { grade: "Std 1", dotName: "Tiny Dot", color: "sun", desc: "A gentle bridge into primary school — strengthening reading, writing and number skills through continued play." },
+    { grade: "Std 2", dotName: "Mighty Dot", color: "lavender", desc: "Building independence and confidence as children apply foundational skills to more complex, guided tasks." }
   ];
 
   var steps = [
@@ -756,7 +790,6 @@
       '</div>' +
       '<span class="level-grade" style="background:' + c.bg + ';color:' + c.text + ';"><span class="dot" style="background:' + c.solid + ';"></span>' + lvl.grade + '</span>' +
       '<h3>' + lvl.dotName + '</h3>' +
-      '<p class="age">' + lvl.ageRange + '</p>' +
       '<p class="desc">' + lvl.desc + '</p>';
     levelsGrid.appendChild(item);
   });
